@@ -1,0 +1,33 @@
+c:\users\rafal\documents\visual studio 2015\Projects\Pomiar temperatury\Pomiar temperatury\bin\Debug\Pomiar temperatury.exe.config
+c:\users\rafal\documents\visual studio 2015\Projects\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar temperatury.csprojResolveAssemblyReference.cache
+c:\users\rafal\documents\visual studio 2015\Projects\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar_temperatury.Temperatura.resources
+c:\users\rafal\documents\visual studio 2015\Projects\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar_temperatury.Properties.Resources.resources
+c:\users\rafal\documents\visual studio 2015\Projects\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar temperatury.csproj.GenerateResource.Cache
+c:\users\rafal\documents\visual studio 2015\Projects\Pomiar temperatury\Pomiar temperatury\bin\Debug\Pomiar temperatury.exe
+c:\users\rafal\documents\visual studio 2015\Projects\Pomiar temperatury\Pomiar temperatury\bin\Debug\Pomiar temperatury.pdb
+c:\users\rafal\documents\visual studio 2015\Projects\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar temperatury.exe
+c:\users\rafal\documents\visual studio 2015\Projects\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar temperatury.pdb
+c:\users\rafal\documents\visual studio 2015\Projects\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar_temperatury.Port.resources
+c:\users\rafal\documents\visual studio 2015\Projects\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar_temperatury.Odczyt.resources
+C:\Robert\wuwut\promi\Pomiar temperatury\Pomiar temperatury\bin\Debug\Pomiar temperatury.exe.config
+C:\Robert\wuwut\promi\Pomiar temperatury\Pomiar temperatury\bin\Debug\Pomiar temperatury.exe
+C:\Robert\wuwut\promi\Pomiar temperatury\Pomiar temperatury\bin\Debug\Pomiar temperatury.pdb
+C:\Robert\wuwut\promi\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar temperatury.csprojResolveAssemblyReference.cache
+C:\Robert\wuwut\promi\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar_temperatury.Odczyt.resources
+C:\Robert\wuwut\promi\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar_temperatury.Port.resources
+C:\Robert\wuwut\promi\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar_temperatury.Temperatura.resources
+C:\Robert\wuwut\promi\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar_temperatury.Properties.Resources.resources
+C:\Robert\wuwut\promi\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar temperatury.csproj.GenerateResource.Cache
+C:\Robert\wuwut\promi\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar temperatury.exe
+C:\Robert\wuwut\promi\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar temperatury.pdb
+C:\Robert\STUDIA\Sem 4-5\promi\Pomiar temperatury\Pomiar temperatury\bin\Debug\Pomiar temperatury.exe.config
+C:\Robert\STUDIA\Sem 4-5\promi\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar temperatury.exe
+C:\Robert\STUDIA\Sem 4-5\promi\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar temperatury.pdb
+C:\Robert\STUDIA\Sem 4-5\promi\Pomiar temperatury\Pomiar temperatury\bin\Debug\Pomiar temperatury.exe
+C:\Robert\STUDIA\Sem 4-5\promi\Pomiar temperatury\Pomiar temperatury\bin\Debug\Pomiar temperatury.pdb
+C:\Robert\STUDIA\Sem 4-5\promi\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar temperatury.csprojResolveAssemblyReference.cache
+C:\Robert\STUDIA\Sem 4-5\promi\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar_temperatury.Odczyt.resources
+C:\Robert\STUDIA\Sem 4-5\promi\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar_temperatury.Port.resources
+C:\Robert\STUDIA\Sem 4-5\promi\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar_temperatury.Temperatura.resources
+C:\Robert\STUDIA\Sem 4-5\promi\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar_temperatury.Properties.Resources.resources
+C:\Robert\STUDIA\Sem 4-5\promi\Pomiar temperatury\Pomiar temperatury\obj\Debug\Pomiar temperatury.csproj.GenerateResource.Cache
