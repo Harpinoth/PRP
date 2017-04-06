@@ -1,0 +1,33 @@
+c:\users\jacek\documents\visual studio 2015\Projects\ProjProgThreads\ProjProgThreads\bin\Debug\ProjProgThreads.exe.config
+c:\users\jacek\documents\visual studio 2015\Projects\ProjProgThreads\ProjProgThreads\bin\Debug\ProjProgThreads.exe
+c:\users\jacek\documents\visual studio 2015\Projects\ProjProgThreads\ProjProgThreads\bin\Debug\ProjProgThreads.pdb
+c:\users\jacek\documents\visual studio 2015\Projects\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.csprojResolveAssemblyReference.cache
+c:\users\jacek\documents\visual studio 2015\Projects\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.Properties.Resources.resources
+c:\users\jacek\documents\visual studio 2015\Projects\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.csproj.GenerateResource.Cache
+c:\users\jacek\documents\visual studio 2015\Projects\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.exe
+c:\users\jacek\documents\visual studio 2015\Projects\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.pdb
+C:\Users\Jacek\Documents\Visual Studio 2015\Projects\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.windowform.resources
+C:\Users\Jacek\Documents\Visual Studio 2015\Projects\v4\ProjProgThreads\ProjProgThreads\bin\Debug\ProjProgThreads.exe.config
+C:\Users\Jacek\Documents\Visual Studio 2015\Projects\v4\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.exe
+C:\Users\Jacek\Documents\Visual Studio 2015\Projects\v4\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.pdb
+C:\Users\Jacek\Documents\Visual Studio 2015\Projects\v4\ProjProgThreads\ProjProgThreads\bin\Debug\ProjProgThreads.exe
+C:\Users\Jacek\Documents\Visual Studio 2015\Projects\v4\ProjProgThreads\ProjProgThreads\bin\Debug\ProjProgThreads.pdb
+C:\Users\Jacek\Documents\Visual Studio 2015\Projects\v4\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.csprojResolveAssemblyReference.cache
+C:\Users\Jacek\Documents\Visual Studio 2015\Projects\v4\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.windowform.resources
+C:\Users\Jacek\Documents\Visual Studio 2015\Projects\v4\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.Properties.Resources.resources
+C:\Users\Jacek\Documents\Visual Studio 2015\Projects\v4\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.csproj.GenerateResource.Cache
+C:\Robert\HENTAI\v5\v5\ProjProgThreads\ProjProgThreads\bin\Debug\ProjProgThreads.exe.config
+C:\Robert\HENTAI\v5\v5\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.exe
+C:\Robert\HENTAI\v5\v5\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.pdb
+C:\Robert\HENTAI\v5\v5\ProjProgThreads\ProjProgThreads\bin\Debug\ProjProgThreads.exe
+C:\Robert\HENTAI\v5\v5\ProjProgThreads\ProjProgThreads\bin\Debug\ProjProgThreads.pdb
+C:\Robert\HENTAI\v5\v5\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.csprojResolveAssemblyReference.cache
+C:\Robert\HENTAI\v5\v5\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.windowform.resources
+C:\Robert\HENTAI\v5\v5\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.Properties.Resources.resources
+C:\Robert\HENTAI\v5\v5\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.csproj.GenerateResource.Cache
+C:\Robert\wuwut\HENTAI\v5\v5\ProjProgThreads\ProjProgThreads\bin\Debug\ProjProgThreads.exe.config
+C:\Robert\wuwut\HENTAI\v5\v5\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.exe
+C:\Robert\wuwut\HENTAI\v5\v5\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.pdb
+C:\Robert\STUDIA\Sem 4-5\v5\v5\ProjProgThreads\ProjProgThreads\bin\Debug\ProjProgThreads.exe.config
+C:\Robert\STUDIA\Sem 4-5\v5\v5\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.exe
+C:\Robert\STUDIA\Sem 4-5\v5\v5\ProjProgThreads\ProjProgThreads\obj\Debug\ProjProgThreads.pdb
