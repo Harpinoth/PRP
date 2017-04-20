@@ -14,69 +14,64 @@ namespace pongpingi
 {
     public partial class Form1 : Form
     {
+             
         public Form1()
         {
             InitializeComponent();
-        }
-
-        public SerialPort port1, port2;
-        public string a,b,d;
-        public int c,f;
+        }        
+        public SerialPort port;
+        public string a,indata;
+        public int f,g;
+      
         
         private void Form1_Load(object sender, EventArgs e)
         {
 
-        }       
-        
-        private void button1_Click(object sender, EventArgs e)
-        {
-            b = textBox1.Text;
-            c = 1;
+        }      
+            
+         private void button1_Click(object sender, EventArgs e)
+        {            
+            port.Write(textBox1.Text);
+            textBox4.Text = textBox1.Text;
         }
-
-        private void Form1_Activated(object sender, EventArgs e)
+        public void dzialaj()
         {
-            if (c == 1)
-            {
-                if (a == "COM1")
-                {
-                    d = "COM2";
-                }
-                else d = "COM1";
-                port2 = new SerialPort(d);
-                port2.Write(b);
-                textBox4.Text = b;
-                c = 0;
-            }
-            if (f == 1)
+            port.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);            
+            while (f == 1)
             {
                 
-                port1 = new SerialPort(a);
-                if (port1.ReadExisting() == "Ping" || port1.ReadExisting() == "Pong")
-                {
-                    if (port1.ReadExisting() == "Ping")
-                    {
-                        b = "Pong";
-                    }
-                    else b = "Ping";
-
-                    textBox2.Text = port1.ReadExisting();
-                    textBox4.Text = "";
-                }
-            }
-            Thread.Sleep(50);
-            if (textBox4.Text=="")
-            {
-                port2 = new SerialPort(d);
-                port2.Write(b);
-                textBox4.Text = b;
             }
         }
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            
+        }
+
+        public delegate void UpdateTextDelegate(string text);
+
+        public void UpdateText(string text) {
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new UpdateTextDelegate(UpdateText, text));
+            }
+            else
+            {
+                this.textBox1.Text = text;
+            }
+        }
+        // http://zurb.com/forrst/posts/C_Windows_Forms_Accessing_the_UI_Thread_in_a-6qU
+
+        public void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
+        {
+            indata = port.ReadExisting();            
+            if (indata == "Ping") a = "Pong";
+            else a = "Ping";         
+        }     
 
         private void button3_Click(object sender, EventArgs e)
         {
-            c = 0;
             f = 0;
+            port.Close();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -84,11 +79,15 @@ namespace pongpingi
          
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public void button2_Click(object sender, EventArgs e)
         {
             a = textBox3.Text;
-            port1 = new SerialPort(a);
+            port = new SerialPort(a);
+            port.Open();
             f = 1;
+            dzialaj();
+
+
         }
     }
 }
