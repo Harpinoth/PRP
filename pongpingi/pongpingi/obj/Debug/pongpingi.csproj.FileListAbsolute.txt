@@ -1,0 +1,9 @@
+C:\Users\pc\Desktop\common\kubi\pongpingi\pongpingi\bin\Debug\pongpingi.exe.config
+C:\Users\pc\Desktop\common\kubi\pongpingi\pongpingi\bin\Debug\pongpingi.exe
+C:\Users\pc\Desktop\common\kubi\pongpingi\pongpingi\bin\Debug\pongpingi.pdb
+C:\Users\pc\Desktop\common\kubi\pongpingi\pongpingi\obj\Debug\pongpingi.csprojResolveAssemblyReference.cache
+C:\Users\pc\Desktop\common\kubi\pongpingi\pongpingi\obj\Debug\pongpingi.Form1.resources
+C:\Users\pc\Desktop\common\kubi\pongpingi\pongpingi\obj\Debug\pongpingi.Properties.Resources.resources
+C:\Users\pc\Desktop\common\kubi\pongpingi\pongpingi\obj\Debug\pongpingi.csproj.GenerateResource.Cache
+C:\Users\pc\Desktop\common\kubi\pongpingi\pongpingi\obj\Debug\pongpingi.exe
+C:\Users\pc\Desktop\common\kubi\pongpingi\pongpingi\obj\Debug\pongpingi.pdb
