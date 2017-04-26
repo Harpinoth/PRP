@@ -37,18 +37,15 @@ namespace pongpingi
         public void dzialaj()
         {
             port.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);            
-            while (f == 1)
-            {
-                
-            }
+            
         }
         private void Form1_Activated(object sender, EventArgs e)
         {
             
         }
 
-        public delegate void UpdateTextDelegate(string text);
-
+        /*public delegate void UpdateTextDelegate(string text);
+   
         public void UpdateText(string text) {
             if (this.InvokeRequired)
             {
@@ -59,13 +56,22 @@ namespace pongpingi
                 this.textBox1.Text = text;
             }
         }
-        // http://zurb.com/forrst/posts/C_Windows_Forms_Accessing_the_UI_Thread_in_a-6qU
+         http://zurb.com/forrst/posts/C_Windows_Forms_Accessing_the_UI_Thread_in_a-6qU
+         */
 
         public void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
-            indata = port.ReadExisting();            
+            Thread.Sleep(100);
+            indata = port.ReadExisting();
+            textBox4.Invoke(new Action(delegate () { textBox4.ResetText(); }));
+            textBox2.Invoke(new Action(delegate () { textBox2.AppendText(indata); }));
             if (indata == "Ping") a = "Pong";
-            else a = "Ping";         
+            else a = "Ping";
+            Thread.Sleep(100);
+            port.Write(a);
+            textBox4.Invoke(new Action(delegate () { textBox4.AppendText(a); }));
+            textBox2.Invoke(new Action(delegate () { textBox2.ResetText(); }));
+            
         }     
 
         private void button3_Click(object sender, EventArgs e)
