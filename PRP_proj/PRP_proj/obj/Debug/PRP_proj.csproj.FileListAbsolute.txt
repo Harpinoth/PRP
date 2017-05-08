@@ -1,0 +1,12 @@
+c:\users\ola\documents\visual studio 2013\Projects\PRP_proj\PRP_proj\bin\Debug\PRP_proj.exe.config
+c:\users\ola\documents\visual studio 2013\Projects\PRP_proj\PRP_proj\bin\Debug\PRP_proj.exe
+c:\users\ola\documents\visual studio 2013\Projects\PRP_proj\PRP_proj\bin\Debug\PRP_proj.pdb
+c:\users\ola\documents\visual studio 2013\Projects\PRP_proj\PRP_proj\obj\Debug\PRP_proj.csprojResolveAssemblyReference.cache
+c:\users\ola\documents\visual studio 2013\Projects\PRP_proj\PRP_proj\obj\Debug\PRP_proj.Form1.resources
+c:\users\ola\documents\visual studio 2013\Projects\PRP_proj\PRP_proj\obj\Debug\PRP_proj.Properties.Resources.resources
+c:\users\ola\documents\visual studio 2013\Projects\PRP_proj\PRP_proj\obj\Debug\PRP_proj.csproj.GenerateResource.Cache
+c:\users\ola\documents\visual studio 2013\Projects\PRP_proj\PRP_proj\obj\Debug\PRP_proj.exe
+c:\users\ola\documents\visual studio 2013\Projects\PRP_proj\PRP_proj\obj\Debug\PRP_proj.pdb
+C:\Users\Ola\Desktop\PRP_proj\PRP_proj\bin\Debug\PRP_proj.exe.config
+C:\Users\Ola\Desktop\PRP_proj\PRP_proj\obj\Debug\PRP_proj.exe
+C:\Users\Ola\Desktop\PRP_proj\PRP_proj\obj\Debug\PRP_proj.pdb
