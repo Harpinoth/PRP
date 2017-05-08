@@ -113,7 +113,7 @@ namespace PRP_proj
 
                     private void trackBar1_Scroll(object sender, EventArgs e)
                     {
-                              wart_krok.Text = Convert.ToString(trackBar1.Value/10);
+                              wart_krok.Text = Convert.ToString((float)trackBar1.Value/10);
                     }
 
                     private void trackBar2_Scroll(object sender, EventArgs e)

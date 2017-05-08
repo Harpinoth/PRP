@@ -31,6 +31,7 @@
                               this.components = new System.ComponentModel.Container();
                               this.tabControl1 = new System.Windows.Forms.TabControl();
                               this.tabPage1 = new System.Windows.Forms.TabPage();
+                              this.label13 = new System.Windows.Forms.Label();
                               this.button2 = new System.Windows.Forms.Button();
                               this.button1 = new System.Windows.Forms.Button();
                               this.porty_combo = new System.Windows.Forms.ComboBox();
@@ -70,7 +71,6 @@
                               this.label9 = new System.Windows.Forms.Label();
                               this.trackBar1 = new System.Windows.Forms.TrackBar();
                               this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-                              this.label13 = new System.Windows.Forms.Label();
                               this.tabControl1.SuspendLayout();
                               this.tabPage1.SuspendLayout();
                               this.tabPage2.SuspendLayout();
@@ -105,6 +105,16 @@
                               this.tabPage1.Size = new System.Drawing.Size(648, 349);
                               this.tabPage1.TabIndex = 0;
                               this.tabPage1.Text = "Port";
+                              // 
+                              // label13
+                              // 
+                              this.label13.AutoSize = true;
+                              this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+                              this.label13.Location = new System.Drawing.Point(3, 3);
+                              this.label13.Name = "label13";
+                              this.label13.Size = new System.Drawing.Size(144, 20);
+                              this.label13.TabIndex = 2;
+                              this.label13.Text = "Ustawianie portu";
                               // 
                               // button2
                               // 
@@ -494,7 +504,7 @@
                               // trackBar1
                               // 
                               this.trackBar1.Location = new System.Drawing.Point(60, 60);
-                              this.trackBar1.Maximum = 30;
+                              this.trackBar1.Maximum = 100;
                               this.trackBar1.Minimum = 1;
                               this.trackBar1.Name = "trackBar1";
                               this.trackBar1.Size = new System.Drawing.Size(104, 45);
@@ -506,16 +516,6 @@
                               // 
                               this.serialPort1.Parity = System.IO.Ports.Parity.Even;
                               this.serialPort1.StopBits = System.IO.Ports.StopBits.Two;
-                              // 
-                              // label13
-                              // 
-                              this.label13.AutoSize = true;
-                              this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-                              this.label13.Location = new System.Drawing.Point(3, 3);
-                              this.label13.Name = "label13";
-                              this.label13.Size = new System.Drawing.Size(144, 20);
-                              this.label13.TabIndex = 2;
-                              this.label13.Text = "Ustawianie portu";
                               // 
                               // Form1
                               // 
