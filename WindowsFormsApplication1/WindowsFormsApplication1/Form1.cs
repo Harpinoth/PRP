@@ -21,6 +21,7 @@ namespace WindowsFormsApplication1
             }
         public SerialPort port;
         public string index, com, flaga3="0",p="p",znikaj;
+        public string[] przepisywacz;
         public string[,] indata = new string [8,8]{ {"0","0","0","0","0","0","0","0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" } };
         public string[,] outdata = new string[8,8]{ {"0","0","0","0","0","0","0","0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" } };
         public bool flaga1=false, flaga2 = false, readyclicked=true, connclicked = true,iwasnthere=true,gra2=false,kolejnosc=false;
@@ -872,7 +873,7 @@ namespace WindowsFormsApplication1
                 while (status > 0)
                 {
                     MessageBox.Show("Łączenie z przeciwnikiem!");
-                    if (flaga1)
+                    if (flaga1 && status > 0)
                     {
                         //while(com == "COM4" && liczmitu < 2) { znikaj = port.ReadExisting(); liczmitu++; }
                         while (liczmitu < 2 && com == "COM4")
@@ -885,6 +886,7 @@ namespace WindowsFormsApplication1
                             for (int j = 0; j <= 7; j++)
                             {                                                                                                                  
                                 port.Write("OK");
+                                Thread.Sleep(10);
                                 indata[i, j] = port.ReadExisting();
                                 Thread.Sleep(100);
                                 //port.Write("STOP");
@@ -897,7 +899,7 @@ namespace WindowsFormsApplication1
                         status = status - 1;
                         Thread.Sleep(200);
                     }
-                    if (flaga2)
+                    if (flaga2 && status>0)
                     {                        
                         for (int i = 0; i <= 7; i++)
                         {
