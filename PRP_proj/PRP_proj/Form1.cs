@@ -62,7 +62,7 @@ namespace PRP_proj
 
                     private void podstawa_plus_Click(object sender, EventArgs e)
                     {
-                              serialPort1.Write(String.Format("DJ 1," + 1 + "\r\n")); // potem można zrobic stepa i speed
+                              serialPort1.Write(String.Format("DJ 1," + krok + "\r\n")); // potem można zrobic stepa i speed
 
                     }
 
