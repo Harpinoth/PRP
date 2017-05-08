@@ -7,13 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
+using System.IO.Ports;
 
 namespace PRP_proj
 {
           public partial class Form1 : Form
           {
-                    //public static string[] myPort = System.IO.Ports.SerialPort.GetPortNames();
-                    public static string[] myPort = {"TestCOM1", "TestCOM2"}; // do testów
+                    public static string[] myPort = System.IO.Ports.SerialPort.GetPortNames();
+                    //public static string[] myPort = {"TestCOM1", "TestCOM2"}; // do testów
                     public static float krok = (float)0.1;
 
                     public Form1()
@@ -127,5 +129,14 @@ namespace PRP_proj
                               serialPort1.Write(String.Format("SP " + wart_pred.Text + "\r\n"));
                     }
 
-          }
+        private void tabPage5_Enter(object sender, EventArgs e)
+        {
+            serialPort1.Write(String.Format("WH"));
+            serialPort1.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+        }
+        public void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
+        {
+            WH_label.Invoke(new Action(delegate () { WH_label.Text = serialPort1.ReadExisting(); }));
+        }
+    }
 }
