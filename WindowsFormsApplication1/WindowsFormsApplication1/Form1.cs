@@ -32,516 +32,709 @@ namespace WindowsFormsApplication1
         
         private void A1_Click(object sender, EventArgs e)
         {
-            if (indata[0, 0] == "1") { A1.Text = "X"; win++; }
-            else A1.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("1");
+            if (kolejnosc)
+            {
+                if (indata[0, 0] == "1") { A1.Text = "X"; win++; }
+                else A1.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("1");
+            }
         }
 
         private void A2_Click(object sender, EventArgs e)
         {
-            if (indata[0, 1] == "1") { A2.Text = "X"; win++; }
-            else A2.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("2");
+            if (kolejnosc)
+            {
+                if (indata[0, 1] == "1") { A2.Text = "X"; win++; }
+                else A2.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("2");
+            }
         }
 
         private void A3_Click(object sender, EventArgs e)
         {
-            if (indata[0, 2] == "1") { A3.Text = "X"; win++; }
-            else A3.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("3");
+            if (kolejnosc)
+            {
+                if (indata[0, 2] == "1") { A3.Text = "X"; win++; }
+                else A3.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("3");
+            }
         }
 
         private void A4_Click(object sender, EventArgs e)
         {
-            if (indata[0, 3] == "1") { A4.Text = "X"; win++; }
-            else A4.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("4");
+            if (kolejnosc)
+            {
+                if (indata[0, 3] == "1") { A4.Text = "X"; win++; }
+                else A4.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("4");
+            }
         }
 
         private void A5_Click(object sender, EventArgs e)
         {
-            if (indata[0, 4] == "1") { A5.Text = "X"; win++; }
-            else A5.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("5");
+            if (kolejnosc)
+            {
+                if (indata[0, 4] == "1") { A5.Text = "X"; win++; }
+                else A5.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("5");
+            }
         }
 
         private void A6_Click(object sender, EventArgs e)
         {
-            if (indata[0, 5] == "1") { A6.Text = "X"; win++; }
-            else A6.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("6");
+            if (kolejnosc)
+            {
+                if (indata[0, 5] == "1") { A6.Text = "X"; win++; }
+                else A6.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("6");
+            }
         }
 
         private void A7_Click(object sender, EventArgs e)
         {
-            if (indata[0, 6] == "1") { A7.Text = "X"; win++; }
-            else A7.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("7");
+            if (kolejnosc)
+            {
+                if (indata[0, 6] == "1") { A7.Text = "X"; win++; }
+                else A7.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("7");
+            }
         }
 
         private void A8_Click(object sender, EventArgs e)
         {
-            if (indata[0, 7] == "1") { A8.Text = "X"; win++; }
-            else A8.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("8");
+            if (kolejnosc)
+            {
+                if (indata[0, 7] == "1") { A8.Text = "X"; win++; }
+                else A8.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("8");
+            }
         }
 
         private void B1_Click(object sender, EventArgs e)
         {
-            if (indata[1, 0] == "1") { B1.Text = "X"; win++; }
-            else B1.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("9");
+            if (kolejnosc)
+            {
+                if (indata[1, 0] == "1") { B1.Text = "X"; win++; }
+                else B1.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("9");
+            }
         }
 
         private void B2_Click(object sender, EventArgs e)
         {
-            if (indata[1, 1] == "1") { B2.Text = "X"; win++; }
-            else B2.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("10");
+            if (kolejnosc)
+            {
+                if (indata[1, 1] == "1") { B2.Text = "X"; win++; }
+                else B2.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("10");
+            }
         }
 
         private void B3_Click(object sender, EventArgs e)
         {
-            if (indata[1, 2] == "1") { B3.Text = "X"; win++; }
-            else B3.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("11");
+            if (kolejnosc)
+            {
+                if (indata[1, 2] == "1") { B3.Text = "X"; win++; }
+                else B3.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("11");
+            }
         }
 
         private void B4_Click(object sender, EventArgs e)
         {
-            if (indata[1, 3] == "1") { B4.Text = "X"; win++; }
-            else B4.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("12");
+            if (kolejnosc)
+            {
+                if (indata[1, 3] == "1") { B4.Text = "X"; win++; }
+                else B4.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("12");
+            }
         }
 
         private void B5_Click(object sender, EventArgs e)
         {
-            if (indata[1, 4] == "1") { B5.Text = "X"; win++; }
-            else B5.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("13");
+            if (kolejnosc)
+            {
+                if (indata[1, 4] == "1") { B5.Text = "X"; win++; }
+                else B5.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("13");
+            }
         }
 
         private void B6_Click(object sender, EventArgs e)
         {
-            if (indata[1, 5] == "1") { B6.Text = "X"; win++; }
-            else B6.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("14");
+            if (kolejnosc)
+            {
+                if (indata[1, 5] == "1") { B6.Text = "X"; win++; }
+                else B6.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("14");
+            }
+
         }
 
         private void B7_Click(object sender, EventArgs e)
         {
-            if (indata[1, 6] == "1") { B7.Text = "X"; win++; }
-            else B7.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("15");
+            if (kolejnosc)
+            {
+                if (indata[1, 6] == "1") { B7.Text = "X"; win++; }
+                else B7.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("15");
+            }
         }
 
         private void B8_Click(object sender, EventArgs e)
         {
-            if (indata[1, 7] == "1") { B8.Text = "X"; win++; }
-            else B8.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("16");
+            if (kolejnosc)
+            {
+                if (indata[1, 7] == "1") { B8.Text = "X"; win++; }
+                else B8.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("16");
+            }
         }
 
         private void C1_Click(object sender, EventArgs e)
         {
-            if (indata[2, 0] == "1") { C1.Text = "X"; win++; }
-            else C1.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("17");
+            if (kolejnosc)
+            {
+                if (indata[2, 0] == "1") { C1.Text = "X"; win++; }
+                else C1.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("17");
+            }
         }
 
         private void C2_Click(object sender, EventArgs e)
         {
-            if (indata[2, 1] == "1") { C2.Text = "X"; win++; }
-            else C2.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("18");
+            if (kolejnosc)
+            {
+                if (indata[2, 1] == "1") { C2.Text = "X"; win++; }
+                else C2.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("18");
+            }
         }
 
         private void C3_Click(object sender, EventArgs e)
         {
-            if (indata[2, 2] == "1") { C3.Text = "X"; win++; }
-            else C3.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("19");
+            if (kolejnosc)
+            {
+                if (indata[2, 2] == "1") { C3.Text = "X"; win++; }
+                else C3.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("19");
+            }
         }
 
         private void C4_Click(object sender, EventArgs e)
         {
-            if(indata[2, 3] == "1") { C4.Text = "X"; win++; }
-            else C4.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("20");
+            if (kolejnosc)
+            {
+                if (indata[2, 3] == "1") { C4.Text = "X"; win++; }
+                else C4.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("20");
+            }
         }
 
         private void C5_Click(object sender, EventArgs e)
         {
-            if (indata[2, 4] == "1") { C5.Text = "X"; win++; }
-            else C5.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("21");
+            if (kolejnosc)
+            {
+                if (indata[2, 4] == "1") { C5.Text = "X"; win++; }
+                else C5.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("21");
+            }
         }
 
         private void C6_Click(object sender, EventArgs e)
         {
-            if (indata[2, 5] == "1") { C6.Text = "X"; win++; }
-            else C6.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("22");
+            if (kolejnosc)
+            {
+                if (indata[2, 5] == "1") { C6.Text = "X"; win++; }
+                else C6.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("22");
+            }
         }
 
         private void C7_Click(object sender, EventArgs e)
         {
-            if (indata[2, 6] == "1") { C7.Text = "X"; win++; }
-            else C7.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("23");
+            if (kolejnosc)
+            {
+                if (indata[2, 6] == "1") { C7.Text = "X"; win++; }
+                else C7.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("23");
+            }
         }
 
         private void C8_Click(object sender, EventArgs e)
         {
-            if (indata[2, 7] == "1") { C8.Text = "X"; win++; }
-            else C8.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("24");
+            if (kolejnosc)
+            {
+                if (indata[2, 7] == "1") { C8.Text = "X"; win++; }
+                else C8.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("24");
+            }
         }
 
         private void D1_Click(object sender, EventArgs e)
         {
-            if (indata[3, 0] == "1") { D1.Text = "X"; win++; }
-            else D1.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("25");
+            if (kolejnosc)
+            {
+                if (indata[3, 0] == "1") { D1.Text = "X"; win++; }
+                else D1.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("25");
+            }
         }
 
         private void D2_Click(object sender, EventArgs e)
         {
-            if (indata[3, 1] == "1") { D2.Text = "X"; win++; }
-            else D2.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("26");
+            if (kolejnosc)
+            {
+                if (indata[3, 1] == "1") { D2.Text = "X"; win++; }
+                else D2.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("26");
+            }
         }
 
         private void D3_Click(object sender, EventArgs e)
         {
-            if (indata[3, 2] == "1") { D3.Text = "X"; win++; }
-            else D3.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("27");
+            if (kolejnosc)
+            {
+                if (indata[3, 2] == "1") { D3.Text = "X"; win++; }
+                else D3.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("27");
+            }
         }
 
         private void D4_Click(object sender, EventArgs e)
         {
-            if (indata[3, 3] == "1") { D4.Text = "X"; win++; }
-            else D4.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("28");
+            if (kolejnosc)
+            {
+                if (indata[3, 3] == "1") { D4.Text = "X"; win++; }
+                else D4.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("28");
+            }
         }
 
         private void D5_Click(object sender, EventArgs e)
         {
-            if (indata[3, 4] == "1") { D5.Text = "X"; win++; }
-            else D5.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("29");
+            if (kolejnosc)
+            {
+                if (indata[3, 4] == "1") { D5.Text = "X"; win++; }
+                else D5.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("29");
+            }
 
         }
 
         private void D6_Click(object sender, EventArgs e)
         {
-            if (indata[3, 5] == "1") { D6.Text = "X"; win++; }
-            else D6.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("30");
+            if (kolejnosc)
+            {
+                if (indata[3, 5] == "1") { D6.Text = "X"; win++; }
+                else D6.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("30");
+            }
         }
 
         private void D7_Click(object sender, EventArgs e)
         {
-            if (indata[3, 6] == "1") { D7.Text = "X"; win++; }
-            else D7.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("31");
+            if (kolejnosc)
+            {
+                if (indata[3, 6] == "1") { D7.Text = "X"; win++; }
+                else D7.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("31");
+            }
         }
 
         private void D8_Click(object sender, EventArgs e)
         {
-            if (indata[3, 7] == "1") { D8.Text = "X"; win++; }
-            else D8.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("32");
+            if (kolejnosc)
+            {
+                if (indata[3, 7] == "1") { D8.Text = "X"; win++; }
+                else D8.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("32");
+            }
 
         }
 
         private void E1_Click(object sender, EventArgs e)
         {
-            if (indata[4, 0] == "1") { E1.Text = "X"; win++; }
-            else E1.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("33");
+            if (kolejnosc)
+            {
+                if (indata[4, 0] == "1") { E1.Text = "X"; win++; }
+                else E1.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("33");
+            }
         }
 
         private void E2_Click(object sender, EventArgs e)
         {
-            if (indata[4, 1] == "1") { E2.Text = "X"; win++; }
-            else E2.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("34");
+            if (kolejnosc)
+            {
+                if (indata[4, 1] == "1") { E2.Text = "X"; win++; }
+                else E2.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("34");
+            }
         }
 
         private void E3_Click(object sender, EventArgs e)
         {
-            if (indata[4, 2] == "1") { E3.Text = "X"; win++; }
-            else E3.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("35");
+            if (kolejnosc)
+            {
+                if (indata[4, 2] == "1") { E3.Text = "X"; win++; }
+                else E3.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("35");
+            }
         }
 
         private void E4_Click(object sender, EventArgs e)
         {
-            if (indata[4, 3] == "1") { E4.Text = "X"; win++; }
-            else E4.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("36");
+            if (kolejnosc)
+            {
+                if (indata[4, 3] == "1") { E4.Text = "X"; win++; }
+                else E4.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("36");
+            }
         }
 
         private void E5_Click(object sender, EventArgs e)
         {
-            if (indata[4, 4] == "1") { E5.Text = "X"; win++; }
-            else E5.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("37");
+            if (kolejnosc)
+            {
+                if (indata[4, 4] == "1") { E5.Text = "X"; win++; }
+                else E5.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("37");
+            }
         }
 
         private void E6_Click(object sender, EventArgs e)
         {
-            if (indata[4, 5] == "1") { E6.Text = "X"; win++; }
-            else E6.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("38");
+            if (kolejnosc)
+            {
+                if (indata[4, 5] == "1") { E6.Text = "X"; win++; }
+                else E6.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("38");
+            }
         }
 
         private void E7_Click(object sender, EventArgs e)
         {
-            if (indata[4, 6] == "1") { E7.Text = "X"; win++; }
-            else E7.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("39");
+            if (kolejnosc)
+            {
+                if (indata[4, 6] == "1") { E7.Text = "X"; win++; }
+                else E7.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("39");
+            }
         }
 
         private void E8_Click(object sender, EventArgs e)
         {
-            if (indata[4, 7] == "1") { E8.Text = "X"; win++; }
-            else E8.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("40");
+            if (kolejnosc)
+            {
+                if (indata[4, 7] == "1") { E8.Text = "X"; win++; }
+                else E8.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("40");
+            }
         }
 
         private void F1_Click(object sender, EventArgs e)
         {
-            if (indata[5, 0] == "1") { F1.Text = "X"; win++; }
-            else F1.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("41");
+            if (kolejnosc)
+            {
+                if (indata[5, 0] == "1") { F1.Text = "X"; win++; }
+                else F1.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("41");
+            }
         }
 
         private void F2_Click(object sender, EventArgs e)
         {
-            if (indata[5, 1] == "1") { F2.Text = "X"; win++; }
-            else F2.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("42");
+            if (kolejnosc)
+            {
+                if (indata[5, 1] == "1") { F2.Text = "X"; win++; }
+                else F2.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("42");
+            }
         }
 
         private void F3_Click(object sender, EventArgs e)
         {
-            if (indata[5, 2] == "1") { F3.Text = "X"; win++; }
-            else F3.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("43");
+            if (kolejnosc)
+            {
+                if (indata[5, 2] == "1") { F3.Text = "X"; win++; }
+                else F3.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("43");
+            }
         }
 
         private void F4_Click(object sender, EventArgs e)
         {
-            if (indata[5, 3] == "1") { F4.Text = "X"; win++; }
-            else F4.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("44");
+            if (kolejnosc)
+            {
+                if (indata[5, 3] == "1") { F4.Text = "X"; win++; }
+                else F4.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("44");
+            }
         }
 
         private void F5_Click(object sender, EventArgs e)
         {
-            if (indata[5, 4] == "1") { F5.Text = "X"; win++; }
-            else F5.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("45");
+            if (kolejnosc)
+            {
+                if (indata[5, 4] == "1") { F5.Text = "X"; win++; }
+                else F5.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("45");
+            }
         }
 
         private void F6_Click(object sender, EventArgs e)
         {
-            if (indata[5, 5] == "1") { F6.Text = "X"; win++; }
-            else F6.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("46");
+            if (kolejnosc)
+            {
+                if (indata[5, 5] == "1") { F6.Text = "X"; win++; }
+                else F6.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("46");
+            }
         }
 
         private void F7_Click(object sender, EventArgs e)
         {
-            if (indata[5, 6] == "1") { F7.Text = "X"; win++; }
-            else F7.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("47");
+            if (kolejnosc)
+            {
+                if (indata[5, 6] == "1") { F7.Text = "X"; win++; }
+                else F7.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("47");
+            }
         }
 
         private void F8_Click(object sender, EventArgs e)
         {
-            if (indata[5, 7] == "1") { F8.Text = "X"; win++; }
-            else F8.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("48");
+            if (kolejnosc)
+            {
+                if (indata[5, 7] == "1") { F8.Text = "X"; win++; }
+                else F8.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("48");
+            }
         }
 
         private void G1_Click(object sender, EventArgs e)
         {
-            if (indata[6, 0] == "1") { G1.Text = "X"; win++; }
-            else G1.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("49");
+            if (kolejnosc)
+            {
+                if (indata[6, 0] == "1") { G1.Text = "X"; win++; }
+                else G1.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("49");
+            }
         }
 
         private void G2_Click(object sender, EventArgs e)
         {
-            if(indata[6, 1] == "1") { G2.Text = "X"; win++; }
-            else G2.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("50");
+            if (kolejnosc)
+            {
+                if (indata[6, 1] == "1") { G2.Text = "X"; win++; }
+                else G2.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("50");
+            }
         }
 
         private void G3_Click(object sender, EventArgs e)
         {
-            if (indata[6, 2] == "1") { G3.Text = "X"; win++; }
-            else G3.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("51");
+            if (kolejnosc)
+            {
+                if (indata[6, 2] == "1") { G3.Text = "X"; win++; }
+                else G3.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("51");
+            }
         }
 
         private void G4_Click(object sender, EventArgs e)
         {
-            if (indata[6, 3] == "1") { G4.Text = "X"; win++; }
-            else G4.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("52");
+            if (kolejnosc)
+            {
+                if (indata[6, 3] == "1") { G4.Text = "X"; win++; }
+                else G4.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("52");
+            }
         }
 
         private void G5_Click(object sender, EventArgs e)
         {
-            if (indata[6, 4] == "1") { G5.Text = "X"; win++; }
-            else G5.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("53");
+            if (kolejnosc)
+            {
+                if (indata[6, 4] == "1") { G5.Text = "X"; win++; }
+                else G5.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("53");
+            }
         }
 
         private void G6_Click(object sender, EventArgs e)
         {
-            if (indata[6, 5] == "1") { G6.Text = "X"; win++; }
-            else G6.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("54");
+            if (kolejnosc)
+            {
+                if (indata[6, 5] == "1") { G6.Text = "X"; win++; }
+                else G6.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("54");
+            }
         }
 
         private void G7_Click(object sender, EventArgs e)
         {
-            if (indata[6, 6] == "1") { G7.Text = "X"; win++; }
-            else G7.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("55");
+            if (kolejnosc)
+            {
+                if (indata[6, 6] == "1") { G7.Text = "X"; win++; }
+                else G7.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("55");
+            }
         }
 
         private void G8_Click(object sender, EventArgs e)
         {
-            if (indata[6, 7] == "1") { G8.Text = "X"; win++; }
-            else G8.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("56");
+            if (kolejnosc)
+            {
+                if (indata[6, 7] == "1") { G8.Text = "X"; win++; }
+                else G8.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("56");
+            }
         }
 
         private void H1_Click(object sender, EventArgs e)
         {
-            if (indata[7, 0] == "1") { H1.Text = "X"; win++; }
-            else H1.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("57");
+            if (kolejnosc)
+            {
+                if (indata[7, 0] == "1") { H1.Text = "X"; win++; }
+                else H1.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("57");
+            }
         }
 
         private void H2_Click(object sender, EventArgs e)
         {
-            if(indata[7, 1] == "1") { H2.Text = "X"; win++; }
-            else H2.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("58");
+            if (kolejnosc)
+            {
+                if (indata[7, 1] == "1") { H2.Text = "X"; win++; }
+                else H2.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("58");
+            }
         }
 
         private void H3_Click(object sender, EventArgs e)
         {
-            if (indata[7, 2] == "1") { H3.Text = "X"; win++; }
-            else H3.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("59");
+            if (kolejnosc)
+            {
+                if (indata[7, 2] == "1") { H3.Text = "X"; win++; }
+                else H3.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("59");
+            }
         }
 
         private void H4_Click(object sender, EventArgs e)
         {
-            if (indata[7, 3] == "1") { H4.Text = "X"; win++; }
-            else H4.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("60");
+            if (kolejnosc)
+            {
+                if (indata[7, 3] == "1") { H4.Text = "X"; win++; }
+                else H4.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("60");
+            }
         }
 
         private void H5_Click(object sender, EventArgs e)
         {
-            if (indata[7, 4] == "1") { H5.Text = "X"; win++; }
-            else H5.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("61");
+            if (kolejnosc)
+            {
+                if (indata[7, 4] == "1") { H5.Text = "X"; win++; }
+                else H5.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("61");
+            }
         }
 
         private void H6_Click(object sender, EventArgs e)
         {
-            if (indata[7, 5] == "1") { H6.Text = "X"; win++; }
-            else H6.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("62");
+            if (kolejnosc)
+            {
+                if (indata[7, 5] == "1") { H6.Text = "X"; win++; }
+                else H6.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("62");
+            }
         }
 
         private void H7_Click(object sender, EventArgs e)
         {
-            if (indata[7, 6] == "1") { H7.Text = "X"; win++; }
-            else H7.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("63");
+            if (kolejnosc)
+            {
+                if (indata[7, 6] == "1") { H7.Text = "X"; win++; }
+                else H7.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("63");
+            }
         }
 
         private void H8_Click(object sender, EventArgs e)
         {
-            if (indata[7, 7] == "1") { H8.Text = "X"; win++; }
-            else H8.Text = "pudło";
-            if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
-            else port.Write("64");
+            if (kolejnosc)
+            {
+                if (indata[7, 7] == "1") { H8.Text = "X"; win++; }
+                else H8.Text = "pudło";
+                if (win == 8) { port.Write("80"); MessageBox.Show("Wygrałeś"); }
+                else port.Write("64");
+            }
         }
 
         // Aktualizowanie moich statków
@@ -918,13 +1111,15 @@ namespace WindowsFormsApplication1
                     }
                 }
                 MessageBox.Show("Gra się zaczęła!");
-                gra2=true;                
+                if(kolejnosc) MessageBox.Show("Teraz Twoja tura!");
+                gra2 =true;                
             }
             else
             {          
                 index = port.ReadExisting();
                 invokemaster(index);
-               
+                MessageBox.Show("Teraz Twoja tura!");
+                kolejnosc = true;
             }                 
         }
         // Tworzenie macierzy własnych statków
