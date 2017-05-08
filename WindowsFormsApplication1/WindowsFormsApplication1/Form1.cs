@@ -20,11 +20,11 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Skonfiguruj połączenie");
             }
         public SerialPort port;
-        public string index, com, flaga3="0",p="p";
+        public string index, com, flaga3="0",p="p",znikaj;
         public string[,] indata = new string [8,8]{ {"0","0","0","0","0","0","0","0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" } };
         public string[,] outdata = new string[8,8]{ {"0","0","0","0","0","0","0","0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" }, { "0", "0", "0", "0", "0", "0", "0", "0" } };
-        public bool flaga1=false, flaga2 = false, readyclicked=true, connclicked = true,iwasnthere=true,gra2=false;
-        public int status=0,count=0,win=0; 
+        public bool flaga1=false, flaga2 = false, readyclicked=true, connclicked = true,iwasnthere=true,gra2=false,kolejnosc=false;
+        public int status=0,count=0,win=0,liczmitu=0,ignor=0; 
         
         // Przysłanie danych w trakcie gry      
         
@@ -847,75 +847,82 @@ namespace WindowsFormsApplication1
 
         public void polaczenie()
         {
-            while (port.ReadExisting()!="1")
-            {
-                port.Write("1");
-            }
             port.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+            MessageBox.Show("Poczekaj na przeciwnika!");
+            port.Write("Hello");
         }
 
         public void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
             if (gra2==false)
             {
-                if (port.ReadExisting() == "1" && iwasnthere)
+                port.Write("Hello");
+                if (iwasnthere)
                 {
-                    MessageBox.Show("Łączenie z przeciwnikiem!");
-                    if (com == "COM4") flaga3 = "pierwszy";
+                    if (com == "COM4") { flaga3 = "pierwszy"; kolejnosc = true; }
                     else flaga3 = "drugi";
                     if (flaga3 == "pierwszy") flaga1 = true;
                     else flaga2 = true;
                     status = 2;
                     iwasnthere = false;
-
                 }
-                Thread.Sleep(15);
+                Thread.Sleep(50);
+                //if (kolejnosc) { port.Write("czekaj"); while (!(port.ReadExisting() == "synchro")) { port.Write("czekaj"); } }
+                //else { port.Write("synchro"); while (!(port.ReadExisting() == "czekaj")) { port.Write("synchro"); } }
                 while (status > 0)
                 {
+                    MessageBox.Show("Łączenie z przeciwnikiem!");
                     if (flaga1)
                     {
+                        //while(com == "COM4" && liczmitu < 2) { znikaj = port.ReadExisting(); liczmitu++; }
+                        while (liczmitu < 2 && com == "COM4")
+                        {
+                            znikaj = port.ReadExisting();
+                            liczmitu++;
+                        }
                         for (int i = 0; i <= 7; i++)
                         {
                             for (int j = 0; j <= 7; j++)
-                            {
-                                indata[i, j] = port.ReadExisting();
+                            {                                                                                                                  
                                 port.Write("OK");
-                                Thread.Sleep(10);
-                                port.Write("STOP");
+                                indata[i, j] = port.ReadExisting();
+                                Thread.Sleep(100);
+                                //port.Write("STOP");
+                                textBox2.Invoke(new Action(delegate () { textBox2.AppendText(indata[i, j]); }));
+                                
                             }
                         }
                         flaga2 = true;
                         flaga1 = false;
                         status = status - 1;
-                        Thread.Sleep(100);
+                        Thread.Sleep(200);
                     }
                     if (flaga2)
-                    {
+                    {                        
                         for (int i = 0; i <= 7; i++)
                         {
                             for (int j = 0; j <= 7; j++)
                             {
-                                while (port.ReadExisting() != "OK") {; }
+                                while (!(port.ReadExisting() == "OK")) {; }
+                                //while (!(port.ReadExisting() == "STOP")) { port.Write(outdata[i, j]); } 
                                 port.Write(outdata[i, j]);
-                                Thread.Sleep(15);
+                                textBox1.Invoke(new Action(delegate () { textBox1.AppendText(outdata[i, j]); }));                                
                             }
                         }
                         flaga1 = true;
                         flaga2 = false;
                         status = status - 1;
-                        Thread.Sleep(100);
+                        Thread.Sleep(200);
                     }
                 }
                 MessageBox.Show("Gra się zaczęła!");
-                gra2=true;
+                gra2=true;                
             }
             else
-            {
-                if (port.ReadExisting() != "OK")
-                {
-                    index = port.ReadExisting();
-                    invokemaster(index);
-                }
+            {          
+                index = port.ReadExisting();
+                invokemaster(index);
+               
             }                 
         }
         // Tworzenie macierzy własnych statków

@@ -194,6 +194,8 @@
             this.EE88 = new System.Windows.Forms.Button();
             this.FF11 = new System.Windows.Forms.Button();
             this.READY = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -1854,12 +1856,28 @@
             this.READY.UseVisualStyleBackColor = true;
             this.READY.Click += new System.EventHandler(this.READY_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(55, 455);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(359, 20);
+            this.textBox1.TabIndex = 86;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(461, 455);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(359, 20);
+            this.textBox2.TabIndex = 87;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(915, 449);
+            this.ClientSize = new System.Drawing.Size(905, 483);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.READY);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DISCONNECT);
@@ -2045,6 +2063,8 @@
         private System.Windows.Forms.Button EE88;
         private System.Windows.Forms.Button FF11;
         private System.Windows.Forms.Button READY;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
