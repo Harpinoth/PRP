@@ -16,12 +16,3 @@ C:\Users\Ola\Desktop\PRP_proj\PRP_proj\obj\Debug\PRP_proj.csprojResolveAssemblyR
 C:\Users\Ola\Desktop\PRP_proj\PRP_proj\obj\Debug\PRP_proj.Form1.resources
 C:\Users\Ola\Desktop\PRP_proj\PRP_proj\obj\Debug\PRP_proj.Properties.Resources.resources
 C:\Users\Ola\Desktop\PRP_proj\PRP_proj\obj\Debug\PRP_proj.csproj.GenerateResource.Cache
-C:\Users\pc\Desktop\common\kubi\PRP_proj\PRP_proj\bin\Debug\PRP_proj.exe.config
-C:\Users\pc\Desktop\common\kubi\PRP_proj\PRP_proj\obj\Debug\PRP_proj.exe
-C:\Users\pc\Desktop\common\kubi\PRP_proj\PRP_proj\obj\Debug\PRP_proj.pdb
-C:\Users\pc\Desktop\common\kubi\PRP_proj\PRP_proj\bin\Debug\PRP_proj.exe
-C:\Users\pc\Desktop\common\kubi\PRP_proj\PRP_proj\bin\Debug\PRP_proj.pdb
-C:\Users\pc\Desktop\common\kubi\PRP_proj\PRP_proj\obj\Debug\PRP_proj.csprojResolveAssemblyReference.cache
-C:\Users\pc\Desktop\common\kubi\PRP_proj\PRP_proj\obj\Debug\PRP_proj.Form1.resources
-C:\Users\pc\Desktop\common\kubi\PRP_proj\PRP_proj\obj\Debug\PRP_proj.Properties.Resources.resources
-C:\Users\pc\Desktop\common\kubi\PRP_proj\PRP_proj\obj\Debug\PRP_proj.csproj.GenerateResource.Cache
