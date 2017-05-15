@@ -20,6 +20,13 @@ namespace PRP_Labo
 
         }
         public string filename = "plik";    // Filename for connection data saving and reading
+
+        /* TODO: Consider changing the load and save methods to make them save everything, depending on context - 
+         * TODO: they can be remade so they take in input parameters and just save shit they are told to save 
+         * TODO: into files they are told to save into, also loaders can load what is required from them
+         * TODO: at any time, not only connection data 
+         * TODO: possible solution: make separate load and save methods and appropriate data handling methods */
+
         public void load_parameters()       // Method for loading connection data from file
         {
 
@@ -36,7 +43,7 @@ namespace PRP_Labo
                         catch { MessageBox.Show("Port name is either missing or corrupted!"); }  }));               // Port name loading
                     data_baud.Invoke(new Action(delegate () {
                         try { data_baud.Text = parameters[1]; }
-                        catch { MessageBox.Show("Baudrate dara is either missing or corrupted!"); }  }));           // Baudrate loading
+                        catch { MessageBox.Show("Baudrate data is either missing or corrupted!"); }  }));           // Baudrate loading
                     data_parity.Invoke(new Action(delegate () {
                         try { data_parity.Text = parameters[2]; }
                         catch { MessageBox.Show("Parity data is either missing or corrupted!"); }  }));             // Parity loading
@@ -53,7 +60,7 @@ namespace PRP_Labo
         {
             // Saving data
             string filepath;
-            filepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + filename;
+            filepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + filename; // Universal pathname config
             /*  */
             if (File.Exists(@filepath))
             {
