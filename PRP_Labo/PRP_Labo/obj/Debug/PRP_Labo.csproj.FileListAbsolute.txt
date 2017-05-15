@@ -7,3 +7,12 @@ C:\Users\pc\Desktop\common\kubi\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.Properties.
 C:\Users\pc\Desktop\common\kubi\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.csproj.GenerateResource.Cache
 C:\Users\pc\Desktop\common\kubi\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.exe
 C:\Users\pc\Desktop\common\kubi\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.pdb
+C:\Users\Jacek\PRP\PRP_Labo\PRP_Labo\bin\Debug\PRP_Labo.exe.config
+C:\Users\Jacek\PRP\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.exe
+C:\Users\Jacek\PRP\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.pdb
+C:\Users\Jacek\PRP\PRP_Labo\PRP_Labo\bin\Debug\PRP_Labo.exe
+C:\Users\Jacek\PRP\PRP_Labo\PRP_Labo\bin\Debug\PRP_Labo.pdb
+C:\Users\Jacek\PRP\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.csprojResolveAssemblyReference.cache
+C:\Users\Jacek\PRP\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.Form1.resources
+C:\Users\Jacek\PRP\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.Properties.Resources.resources
+C:\Users\Jacek\PRP\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.csproj.GenerateResource.Cache

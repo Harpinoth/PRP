@@ -19,33 +19,40 @@ namespace PRP_Labo
             InitializeComponent();
 
         }
+        
         public void wczytaj_parametry()
         {
-            if (File.Exists(@"C:\Users\pc\Desktop\common\kubi\plik.txt"))
+
+            string filepath;
+            filepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\plik.txt";
+            
+            if (File.Exists(@filepath))
             {
-                string[] parametry = File.ReadAllLines(@"C:\Users\pc\Desktop\common\kubi\plik.txt");
+                string[] parameters = File.ReadAllLines(@filepath);
                 
                     dane_port.Invoke(new Action(delegate () {
-                        try  { dane_port.Text = parametry[0];  }
-                        catch { MessageBox.Show("Coś nie jest dobrze!"); }  }));
+                        try  { dane_port.Text = parameters[0];  }
+                        catch { MessageBox.Show("Port name is either missing or corrupted!"); }  }));
                     dane_szybkosc.Invoke(new Action(delegate () {
-                        try { dane_szybkosc.Text = parametry[1]; }
-                        catch { MessageBox.Show("Coś nie jest dobrze!"); }  }));
+                        try { dane_szybkosc.Text = parameters[1]; }
+                        catch { MessageBox.Show("Baudrate dara is either missing or corrupted!"); }  }));
                     dane_parzystosc.Invoke(new Action(delegate () {
-                        try { dane_parzystosc.Text = parametry[2]; }
-                        catch { MessageBox.Show("Coś nie jest dobrze!"); }  }));
+                        try { dane_parzystosc.Text = parameters[2]; }
+                        catch { MessageBox.Show("Parity data is either missing or corrupted!"); }  }));
                     dane_dlugosc.Invoke(new Action(delegate () {
-                        try { dane_dlugosc.Text = parametry[3]; }
-                        catch { MessageBox.Show("Coś nie jest dobrze!"); }  }));
+                        try { dane_dlugosc.Text = parameters[3]; }
+                        catch { MessageBox.Show("Amount of data bits is either missing or corrupted!"); }  }));
                     dane_bitystopu.Invoke(new Action(delegate () {
-                        try { dane_bitystopu.Text = parametry[4]; }
-                        catch { MessageBox.Show("Coś nie jest dobrze!"); }  }));
+                        try { dane_bitystopu.Text = parameters[4]; }
+                        catch { MessageBox.Show("Stopbits data is either missing or corrupted!"); }  }));
             }
-            else MessageBox.Show("Nie ma pliku!");
+            else MessageBox.Show("File does not exist!");
         }
         public void zapisz_parametry()
         {
-            if (File.Exists(@"C:\Users\pc\Desktop\common\kubi\plik.txt"))
+            string filepath;
+            filepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\plik.txt";
+            if (File.Exists(@filepath))
             {
                 string[] t = new string[5];
                 t[0] = dane_port.Text;
@@ -53,9 +60,9 @@ namespace PRP_Labo
                 t[2] = dane_parzystosc.Text;
                 t[3] = dane_dlugosc.Text;
                 t[4] = dane_bitystopu.Text;
-                File.WriteAllLines(@"C:\Users\pc\Desktop\common\kubi\plik.txt", t);
+                File.WriteAllLines(@filepath, t);
             }
-            else MessageBox.Show("Nie ma pliku!");
+            else MessageBox.Show("File does not exist!");
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,7 +88,7 @@ namespace PRP_Labo
             if (dane_parzystosc.Text == "none") port_lab.Parity = Parity.None;
             else if (dane_parzystosc.Text == "odd") port_lab.Parity = Parity.Odd;
             else if (dane_parzystosc.Text == "even") port_lab.Parity = Parity.Even;
-            else MessageBox.Show("Podano złą parzystość!");
+            else { MessageBox.Show("Wrong parity, setting parity to none!"); port_lab.Parity = Parity.None; }
 
             port_lab.DataBits = Convert.ToInt32(dane_dlugosc.Text);
 
@@ -90,7 +97,7 @@ namespace PRP_Labo
             else if (dane_bitystopu.Text == "two") port_lab.StopBits = StopBits.Two;
             else
             {
-                MessageBox.Show("Podano złe bity stopu, ustawia się wartość domyślną.");
+                MessageBox.Show("Wrong stopbits, setting stopbits to default!");
                 port_lab.StopBits = StopBits.One;
             }
         }
