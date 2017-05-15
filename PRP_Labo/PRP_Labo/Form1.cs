@@ -19,7 +19,11 @@ namespace PRP_Labo
             InitializeComponent();
 
         }
-        public string filename = "plik";    // Filename for connection data saving and reading
+        public SerialPort port_lab; 
+        string line;
+        string crlf = Convert.ToString(Convert.ToChar(10));
+        int linenumber = 10;
+        public string filename = "plik.txt";    // Filename for connection data saving and reading
 
         /* TODO: Consider changing the load and save methods to make them save everything, depending on context - 
          * TODO: they can be remade so they take in input parameters and just save shit they are told to save 
@@ -33,26 +37,31 @@ namespace PRP_Labo
             string filepath;
             filepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + filename; // Universal pathname config
             //MessageBox.Show(filepath);    // Testing/debugging purposes
-            
+
             if (File.Exists(@filepath))
             {
                 string[] parameters = File.ReadAllLines(@filepath);
                 /* Reading data from file */
-                    data_port.Invoke(new Action(delegate () {
-                        try  { data_port.Text = parameters[0];  }
-                        catch { MessageBox.Show("Port name is either missing or corrupted!"); }  }));               // Port name loading
-                    data_baud.Invoke(new Action(delegate () {
-                        try { data_baud.Text = parameters[1]; }
-                        catch { MessageBox.Show("Baudrate data is either missing or corrupted!"); }  }));           // Baudrate loading
-                    data_parity.Invoke(new Action(delegate () {
-                        try { data_parity.Text = parameters[2]; }
-                        catch { MessageBox.Show("Parity data is either missing or corrupted!"); }  }));             // Parity loading
-                    data_bits.Invoke(new Action(delegate () {
-                        try { data_bits.Text = parameters[3]; }
-                        catch { MessageBox.Show("Amount of data bits is either missing or corrupted!"); }  }));     // Data bits loading
-                    data_stopbits.Invoke(new Action(delegate () {
-                        try { data_stopbits.Text = parameters[4]; }
-                        catch { MessageBox.Show("Stopbits data is either missing or corrupted!"); }  }));           // Stopbits loading
+                data_port.Invoke(new Action(delegate () {
+                    try { data_port.Text = parameters[0]; }
+                    catch { MessageBox.Show("Port name is either missing or corrupted!"); }
+                }));               // Port name loading
+                data_baud.Invoke(new Action(delegate () {
+                    try { data_baud.Text = parameters[1]; }
+                    catch { MessageBox.Show("Baudrate data is either missing or corrupted!"); }
+                }));           // Baudrate loading
+                data_parity.Invoke(new Action(delegate () {
+                    try { data_parity.Text = parameters[2]; }
+                    catch { MessageBox.Show("Parity data is either missing or corrupted!"); }
+                }));             // Parity loading
+                data_bits.Invoke(new Action(delegate () {
+                    try { data_bits.Text = parameters[3]; }
+                    catch { MessageBox.Show("Amount of data bits is either missing or corrupted!"); }
+                }));     // Data bits loading
+                data_stopbits.Invoke(new Action(delegate () {
+                    try { data_stopbits.Text = parameters[4]; }
+                    catch { MessageBox.Show("Stopbits data is either missing or corrupted!"); }
+                }));           // Stopbits loading
             }
             else MessageBox.Show("File does not exist!");
         }
@@ -112,6 +121,60 @@ namespace PRP_Labo
             else if (data_stopbits.Text == "two" || data_stopbits.Text == "Two") port_lab.StopBits = StopBits.Two;          // other values will prompt default "one" value
             else { MessageBox.Show("Wrong stopbits, setting stopbits to default!"); port_lab.StopBits = StopBits.One; }
             /* Default stopbits set to avoid critical errors and their results */
+        }
+
+        private void WH_button_Click(object sender, EventArgs e)
+        {
+            if (port_lab.IsOpen) ;
+            else port_lab.Open();
+            port_lab.Write(String.Format("WH" + "\r\n"));
+            port_lab.DataReceived += new SerialDataReceivedEventHandler(port_DataReceived);
+        }
+        private void port_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {      
+            byte[] bytes = new byte[port_lab.BytesToRead];
+            port_lab.Read(bytes, 0, bytes.Length);
+
+            line = System.Text.Encoding.ASCII.GetString(bytes);
+
+            if (line.EndsWith(crlf))
+            {
+                WH_text.Invoke(new Action(delegate () { WH_text.Text = line; }));
+            }
+            else MessageBox.Show("Zły format przychodzących danych!");
+        }
+
+        private void tabPage3_Enter(object sender, EventArgs e)
+        {           
+            
+        }
+
+        private void add_command_Click(object sender, EventArgs e)
+        {
+            if (linenumber < 360)
+            {
+                if (linenumber < 190)
+                {
+                    makro_text.Text += linenumber + " " + text_command.Text + crlf;
+                    linenumber += 10;
+                }
+                else
+                {
+                    makro_text2.Text += linenumber + " " + text_command.Text + crlf;
+                    linenumber += 10;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Osiągnięto maksymalną długość makra!");
+                makro_text2.Text += linenumber + " " + "ED" + crlf;
+            }
+        }
+
+        private void makro_reset_Click(object sender, EventArgs e)
+        {
+            makro_text.ResetText();
+            makro_text2.ResetText();
         }
     }
 }

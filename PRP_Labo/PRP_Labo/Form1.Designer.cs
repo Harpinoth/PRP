@@ -43,14 +43,28 @@
             this.data_baud = new System.Windows.Forms.TextBox();
             this.data_port = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.WH_button = new System.Windows.Forms.Button();
+            this.WH_text = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.makro_text = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.text_command = new System.Windows.Forms.TextBox();
+            this.add_command = new System.Windows.Forms.Button();
+            this.send_command = new System.Windows.Forms.Button();
+            this.makro_reset = new System.Windows.Forms.Button();
+            this.makro_text2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(23, 15);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -182,13 +196,113 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.WH_button);
+            this.tabPage2.Controls.Add(this.WH_text);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(549, 279);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Pozycje";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // WH_button
+            // 
+            this.WH_button.Location = new System.Drawing.Point(45, 20);
+            this.WH_button.Name = "WH_button";
+            this.WH_button.Size = new System.Drawing.Size(60, 20);
+            this.WH_button.TabIndex = 1;
+            this.WH_button.Text = "Gdzie?";
+            this.WH_button.UseVisualStyleBackColor = true;
+            this.WH_button.Click += new System.EventHandler(this.WH_button_Click);
+            // 
+            // WH_text
+            // 
+            this.WH_text.Location = new System.Drawing.Point(131, 20);
+            this.WH_text.Name = "WH_text";
+            this.WH_text.Size = new System.Drawing.Size(305, 20);
+            this.WH_text.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.makro_reset);
+            this.tabPage3.Controls.Add(this.send_command);
+            this.tabPage3.Controls.Add(this.add_command);
+            this.tabPage3.Controls.Add(this.text_command);
+            this.tabPage3.Controls.Add(this.groupBox1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(549, 279);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Makro";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
+            // 
+            // makro_text
+            // 
+            this.makro_text.AutoSize = true;
+            this.makro_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.makro_text.Location = new System.Drawing.Point(27, 21);
+            this.makro_text.Name = "makro_text";
+            this.makro_text.Size = new System.Drawing.Size(0, 12);
+            this.makro_text.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.makro_text2);
+            this.groupBox1.Controls.Add(this.makro_text);
+            this.groupBox1.Location = new System.Drawing.Point(257, 21);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(274, 243);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Makro";
+            // 
+            // text_command
+            // 
+            this.text_command.Location = new System.Drawing.Point(38, 42);
+            this.text_command.Name = "text_command";
+            this.text_command.Size = new System.Drawing.Size(173, 20);
+            this.text_command.TabIndex = 2;
+            // 
+            // add_command
+            // 
+            this.add_command.Location = new System.Drawing.Point(65, 81);
+            this.add_command.Name = "add_command";
+            this.add_command.Size = new System.Drawing.Size(121, 23);
+            this.add_command.TabIndex = 3;
+            this.add_command.Text = "Dodaj komende";
+            this.add_command.UseVisualStyleBackColor = true;
+            this.add_command.Click += new System.EventHandler(this.add_command_Click);
+            // 
+            // send_command
+            // 
+            this.send_command.Location = new System.Drawing.Point(65, 177);
+            this.send_command.Name = "send_command";
+            this.send_command.Size = new System.Drawing.Size(121, 23);
+            this.send_command.TabIndex = 4;
+            this.send_command.Text = "Wyślij makro";
+            this.send_command.UseVisualStyleBackColor = true;
+            // 
+            // makro_reset
+            // 
+            this.makro_reset.Location = new System.Drawing.Point(65, 206);
+            this.makro_reset.Name = "makro_reset";
+            this.makro_reset.Size = new System.Drawing.Size(121, 23);
+            this.makro_reset.TabIndex = 5;
+            this.makro_reset.Text = "Resetuj makro";
+            this.makro_reset.UseVisualStyleBackColor = true;
+            this.makro_reset.Click += new System.EventHandler(this.makro_reset_Click);
+            // 
+            // makro_text2
+            // 
+            this.makro_text2.AutoSize = true;
+            this.makro_text2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.makro_text2.Location = new System.Drawing.Point(141, 21);
+            this.makro_text2.Name = "makro_text2";
+            this.makro_text2.Size = new System.Drawing.Size(0, 12);
+            this.makro_text2.TabIndex = 1;
             // 
             // Form1
             // 
@@ -201,6 +315,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -222,6 +342,16 @@
         private System.Windows.Forms.TextBox data_stopbits;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button connect;
+        private System.Windows.Forms.Button WH_button;
+        private System.Windows.Forms.TextBox WH_text;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label makro_text;
+        private System.Windows.Forms.Button send_command;
+        private System.Windows.Forms.Button add_command;
+        private System.Windows.Forms.TextBox text_command;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button makro_reset;
+        private System.Windows.Forms.Label makro_text2;
     }
 }
 
