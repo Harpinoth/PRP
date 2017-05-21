@@ -46,13 +46,13 @@
             this.WH_button = new System.Windows.Forms.Button();
             this.WH_text = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.makro_text = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.text_command = new System.Windows.Forms.TextBox();
-            this.add_command = new System.Windows.Forms.Button();
-            this.send_command = new System.Windows.Forms.Button();
             this.makro_reset = new System.Windows.Forms.Button();
+            this.send_command = new System.Windows.Forms.Button();
+            this.add_command = new System.Windows.Forms.Button();
+            this.text_command = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.makro_text2 = new System.Windows.Forms.Label();
+            this.makro_text = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -239,14 +239,42 @@
             this.tabPage3.UseVisualStyleBackColor = true;
             this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
             // 
-            // makro_text
+            // makro_reset
             // 
-            this.makro_text.AutoSize = true;
-            this.makro_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.makro_text.Location = new System.Drawing.Point(27, 21);
-            this.makro_text.Name = "makro_text";
-            this.makro_text.Size = new System.Drawing.Size(0, 12);
-            this.makro_text.TabIndex = 0;
+            this.makro_reset.Location = new System.Drawing.Point(65, 206);
+            this.makro_reset.Name = "makro_reset";
+            this.makro_reset.Size = new System.Drawing.Size(121, 23);
+            this.makro_reset.TabIndex = 5;
+            this.makro_reset.Text = "Resetuj makro";
+            this.makro_reset.UseVisualStyleBackColor = true;
+            this.makro_reset.Click += new System.EventHandler(this.makro_reset_Click);
+            // 
+            // send_command
+            // 
+            this.send_command.Location = new System.Drawing.Point(65, 177);
+            this.send_command.Name = "send_command";
+            this.send_command.Size = new System.Drawing.Size(121, 23);
+            this.send_command.TabIndex = 4;
+            this.send_command.Text = "Wyślij makro";
+            this.send_command.UseVisualStyleBackColor = true;
+            this.send_command.Click += new System.EventHandler(this.send_command_Click);
+            // 
+            // add_command
+            // 
+            this.add_command.Location = new System.Drawing.Point(65, 81);
+            this.add_command.Name = "add_command";
+            this.add_command.Size = new System.Drawing.Size(121, 23);
+            this.add_command.TabIndex = 3;
+            this.add_command.Text = "Dodaj komende";
+            this.add_command.UseVisualStyleBackColor = true;
+            this.add_command.Click += new System.EventHandler(this.add_command_Click);
+            // 
+            // text_command
+            // 
+            this.text_command.Location = new System.Drawing.Point(44, 38);
+            this.text_command.Name = "text_command";
+            this.text_command.Size = new System.Drawing.Size(173, 20);
+            this.text_command.TabIndex = 2;
             // 
             // groupBox1
             // 
@@ -259,42 +287,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Makro";
             // 
-            // text_command
-            // 
-            this.text_command.Location = new System.Drawing.Point(38, 42);
-            this.text_command.Name = "text_command";
-            this.text_command.Size = new System.Drawing.Size(173, 20);
-            this.text_command.TabIndex = 2;
-            // 
-            // add_command
-            // 
-            this.add_command.Location = new System.Drawing.Point(65, 81);
-            this.add_command.Name = "add_command";
-            this.add_command.Size = new System.Drawing.Size(121, 23);
-            this.add_command.TabIndex = 3;
-            this.add_command.Text = "Dodaj komende";
-            this.add_command.UseVisualStyleBackColor = true;
-            this.add_command.Click += new System.EventHandler(this.add_command_Click);
-            // 
-            // send_command
-            // 
-            this.send_command.Location = new System.Drawing.Point(65, 177);
-            this.send_command.Name = "send_command";
-            this.send_command.Size = new System.Drawing.Size(121, 23);
-            this.send_command.TabIndex = 4;
-            this.send_command.Text = "Wyślij makro";
-            this.send_command.UseVisualStyleBackColor = true;
-            // 
-            // makro_reset
-            // 
-            this.makro_reset.Location = new System.Drawing.Point(65, 206);
-            this.makro_reset.Name = "makro_reset";
-            this.makro_reset.Size = new System.Drawing.Size(121, 23);
-            this.makro_reset.TabIndex = 5;
-            this.makro_reset.Text = "Resetuj makro";
-            this.makro_reset.UseVisualStyleBackColor = true;
-            this.makro_reset.Click += new System.EventHandler(this.makro_reset_Click);
-            // 
             // makro_text2
             // 
             this.makro_text2.AutoSize = true;
@@ -303,6 +295,15 @@
             this.makro_text2.Name = "makro_text2";
             this.makro_text2.Size = new System.Drawing.Size(0, 12);
             this.makro_text2.TabIndex = 1;
+            // 
+            // makro_text
+            // 
+            this.makro_text.AutoSize = true;
+            this.makro_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.makro_text.Location = new System.Drawing.Point(27, 21);
+            this.makro_text.Name = "makro_text";
+            this.makro_text.Size = new System.Drawing.Size(0, 12);
+            this.makro_text.TabIndex = 0;
             // 
             // Form1
             // 

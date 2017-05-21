@@ -1,5 +1,5 @@
-COM2
+COM3
 9600
-none
+even
 8
-one
+two
