@@ -20,8 +20,7 @@ namespace PRP_Labo
             InitializeComponent();
 
         }
-        private SerialPort port_lab; 
-        string line;
+         
         string crlf = Convert.ToString(Convert.ToChar(10));
         int linenumber = 10;
         public string filename = "plik.txt";    // Filename for connection data saving and reading
@@ -85,6 +84,41 @@ namespace PRP_Labo
             else MessageBox.Show("File does not exist!");
         }
 
+        private SerialPort port_call()
+        {
+            // Connection data conversion to appropriate values and types
+            SerialPort port_lab = new SerialPort(data_port.Text);               // Creates port instance with current port name
+            port_lab.BaudRate = Convert.ToInt32(data_baud.Text);                // Sets the baudrate of port instance to current textbox value
+
+
+            /* Code lines responsible for setting parity */
+            if (data_parity.Text == "none" || data_parity.Text == "None") port_lab.Parity = Parity.None;            // Two possible input values in each if, 
+            else if (data_parity.Text == "odd" || data_parity.Text == "Odd") port_lab.Parity = Parity.Odd;          // other values will prompt default "none" value
+            else if (data_parity.Text == "even" || data_parity.Text == "Even") port_lab.Parity = Parity.Even;
+            else { MessageBox.Show("Wrong parity, setting parity to none!"); port_lab.Parity = Parity.None; }
+            /* Default parity set to avoid critical errors and their results */
+
+            port_lab.DataBits = Convert.ToInt32(data_bits.Text);                // Sets the amount of data bits of port instance to current textbox value
+
+            /* Code lines responsible for setting stopbits */
+            if (data_stopbits.Text == "one" || data_stopbits.Text == "One") port_lab.StopBits = StopBits.One;               // Two possible input values in each if,
+            else if (data_stopbits.Text == "onepointfive" || data_stopbits.Text == "OnePointFive") port_lab.StopBits = StopBits.OnePointFive;
+            else if (data_stopbits.Text == "two" || data_stopbits.Text == "Two") port_lab.StopBits = StopBits.Two;          // other values will prompt default "one" value
+            else { MessageBox.Show("Wrong stopbits, setting stopbits to default!"); port_lab.StopBits = StopBits.One; }
+            /* Default stopbits set to avoid critical errors and their results */            
+
+            return port_lab;
+        }
+
+        private void port_starting(SerialPort port_lab)
+        {
+            port_lab.RtsEnable = true;
+            port_lab.DtrEnable = true;
+            if (port_lab.IsOpen) ;
+            else port_lab.Open();
+        }
+        
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -102,57 +136,15 @@ namespace PRP_Labo
 
         private void connect_Click(object sender, EventArgs e)
         {
-            // Connection data conversion to appropriate values and types
-            SerialPort port_lab = new SerialPort(data_port.Text);               // Creates port instance with current port name
-            port_lab.BaudRate = Convert.ToInt32(data_baud.Text);                // Sets the baudrate of port instance to current textbox value
-
-
-            /* Code lines responsible for setting parity */
-            if (data_parity.Text == "none" || data_parity.Text == "None") port_lab.Parity = Parity.None;            // Two possible input values in each if, 
-            else if (data_parity.Text == "odd" || data_parity.Text == "Odd") port_lab.Parity = Parity.Odd;          // other values will prompt default "none" value
-            else if (data_parity.Text == "even" || data_parity.Text == "Even") port_lab.Parity = Parity.Even;
-            else { MessageBox.Show("Wrong parity, setting parity to none!"); port_lab.Parity = Parity.None; }
-            /* Default parity set to avoid critical errors and their results */
-
-            port_lab.DataBits = Convert.ToInt32(data_bits.Text);                // Sets the amount of data bits of port instance to current textbox value
-
-            /* Code lines responsible for setting stopbits */
-            if (data_stopbits.Text == "one" || data_stopbits.Text == "One") port_lab.StopBits = StopBits.One;               // Two possible input values in each if,
-            else if (data_stopbits.Text == "onepointfive" || data_stopbits.Text == "OnePointFive") port_lab.StopBits = StopBits.OnePointFive;
-            else if (data_stopbits.Text == "two" || data_stopbits.Text == "Two") port_lab.StopBits = StopBits.Two;          // other values will prompt default "one" value
-            else { MessageBox.Show("Wrong stopbits, setting stopbits to default!"); port_lab.StopBits = StopBits.One; }
-            /* Default stopbits set to avoid critical errors and their results */
+            SerialPort port_lab = port_call();
         }
 
         private void WH_button_Click(object sender, EventArgs e)
         {
-            // Connection data conversion to appropriate values and types
-            SerialPort port_lab = new SerialPort(data_port.Text);               // Creates port instance with current port name
-            port_lab.BaudRate = Convert.ToInt32(data_baud.Text);                // Sets the baudrate of port instance to current textbox value
-
-            
-            /* Code lines responsible for setting parity */
-            if (data_parity.Text == "none" || data_parity.Text == "None") port_lab.Parity = Parity.None;            // Two possible input values in each if, 
-            else if (data_parity.Text == "odd" || data_parity.Text == "Odd") port_lab.Parity = Parity.Odd;          // other values will prompt default "none" value
-            else if (data_parity.Text == "even" || data_parity.Text == "Even") port_lab.Parity = Parity.Even;
-            else { MessageBox.Show("Wrong parity, setting parity to none!"); port_lab.Parity = Parity.None; }
-            /* Default parity set to avoid critical errors and their results */
-
-            port_lab.DataBits = Convert.ToInt32(data_bits.Text);                // Sets the amount of data bits of port instance to current textbox value
-
-            /* Code lines responsible for setting stopbits */
-            if (data_stopbits.Text == "one" || data_stopbits.Text == "One") port_lab.StopBits = StopBits.One;               // Two possible input values in each if,
-            else if (data_stopbits.Text == "onepointfive" || data_stopbits.Text == "OnePointFive") port_lab.StopBits = StopBits.OnePointFive;
-            else if (data_stopbits.Text == "two" || data_stopbits.Text == "Two") port_lab.StopBits = StopBits.Two;          // other values will prompt default "one" value
-            else { MessageBox.Show("Wrong stopbits, setting stopbits to default!"); port_lab.StopBits = StopBits.One; }
-            /* Default stopbits set to avoid critical errors and their results */
-
-            port_lab.RtsEnable = true;
-            port_lab.DtrEnable = true;
-            if (port_lab.IsOpen) ;
-            else port_lab.Open();
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
             port_lab.Write(String.Format("WH" + " " + "\r"));
-            Thread.Sleep(400);
+            Thread.Sleep(4000);
             WH_text.Invoke(new Action(delegate () { WH_text.Text = port_lab.ReadExisting(); }));
             port_lab.Close();
             //port_lab.DataReceived += new SerialDataReceivedEventHandler(port_DataReceived);            
@@ -161,27 +153,8 @@ namespace PRP_Labo
         private void port_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             MessageBox.Show("skonczylem!");
-            // Connection data conversion to appropriate values and types
-            SerialPort port_lab = new SerialPort(data_port.Text);               // Creates port instance with current port name
-            port_lab.BaudRate = Convert.ToInt32(data_baud.Text);                // Sets the baudrate of port instance to current textbox value
-
-
-            /* Code lines responsible for setting parity */
-            if (data_parity.Text == "none" || data_parity.Text == "None") port_lab.Parity = Parity.None;            // Two possible input values in each if, 
-            else if (data_parity.Text == "odd" || data_parity.Text == "Odd") port_lab.Parity = Parity.Odd;          // other values will prompt default "none" value
-            else if (data_parity.Text == "even" || data_parity.Text == "Even") port_lab.Parity = Parity.Even;
-            else { MessageBox.Show("Wrong parity, setting parity to none!"); port_lab.Parity = Parity.None; }
-            /* Default parity set to avoid critical errors and their results */
-
-            port_lab.DataBits = Convert.ToInt32(data_bits.Text);                // Sets the amount of data bits of port instance to current textbox value
-
-            /* Code lines responsible for setting stopbits */
-            if (data_stopbits.Text == "one" || data_stopbits.Text == "One") port_lab.StopBits = StopBits.One;               // Two possible input values in each if,
-            else if (data_stopbits.Text == "onepointfive" || data_stopbits.Text == "OnePointFive") port_lab.StopBits = StopBits.OnePointFive;
-            else if (data_stopbits.Text == "two" || data_stopbits.Text == "Two") port_lab.StopBits = StopBits.Two;          // other values will prompt default "one" value
-            else { MessageBox.Show("Wrong stopbits, setting stopbits to default!"); port_lab.StopBits = StopBits.One; }
-            /* Default stopbits set to avoid critical errors and their results */
-            port_lab.Open();
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
             /*byte[] bytes = new byte[port_lab.BytesToRead];
             port_lab.Read(bytes, 0, bytes.Length);
 
@@ -191,6 +164,7 @@ namespace PRP_Labo
             */
             WH_text.Invoke(new Action(delegate () { WH_text.Text = port_lab.ReadExisting(); }));
             Console.WriteLine(port_lab.ReadExisting());
+            port_lab.Close();
         }
 
         private void tabPage3_Enter(object sender, EventArgs e)
@@ -228,33 +202,17 @@ namespace PRP_Labo
 
         private void send_command_Click(object sender, EventArgs e)
         {
-            // Connection data conversion to appropriate values and types
-            SerialPort port_lab = new SerialPort(data_port.Text);               // Creates port instance with current port name
-            port_lab.BaudRate = Convert.ToInt32(data_baud.Text);                // Sets the baudrate of port instance to current textbox value
-
-
-            /* Code lines responsible for setting parity */
-            if (data_parity.Text == "none" || data_parity.Text == "None") port_lab.Parity = Parity.None;            // Two possible input values in each if, 
-            else if (data_parity.Text == "odd" || data_parity.Text == "Odd") port_lab.Parity = Parity.Odd;          // other values will prompt default "none" value
-            else if (data_parity.Text == "even" || data_parity.Text == "Even") port_lab.Parity = Parity.Even;
-            else { MessageBox.Show("Wrong parity, setting parity to none!"); port_lab.Parity = Parity.None; }
-            /* Default parity set to avoid critical errors and their results */
-
-            port_lab.DataBits = Convert.ToInt32(data_bits.Text);                // Sets the amount of data bits of port instance to current textbox value
-
-            /* Code lines responsible for setting stopbits */
-            if (data_stopbits.Text == "one" || data_stopbits.Text == "One") port_lab.StopBits = StopBits.One;               // Two possible input values in each if,
-            else if (data_stopbits.Text == "onepointfive" || data_stopbits.Text == "OnePointFive") port_lab.StopBits = StopBits.OnePointFive;
-            else if (data_stopbits.Text == "two" || data_stopbits.Text == "Two") port_lab.StopBits = StopBits.Two;          // other values will prompt default "one" value
-            else { MessageBox.Show("Wrong stopbits, setting stopbits to default!"); port_lab.StopBits = StopBits.One; }
-            /* Default stopbits set to avoid critical errors and their results */
-            if (port_lab.IsOpen) ;
-            else port_lab.Open();
-            port_lab.RtsEnable = true;
-            port_lab.DtrEnable = true;
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
             Thread.Sleep(500);
             port_lab.Write(String.Format(text_command.Text + " " + "\r"));
             MessageBox.Show("jestem tu!");
+            port_lab.Close();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SerialPort port_lab = port_call();
             port_lab.Close();
         }
     }
