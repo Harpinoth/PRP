@@ -23,6 +23,8 @@ namespace PRP_Labo
          
         string crlf = Convert.ToString(Convert.ToChar(10));
         int linenumber = 10;
+        public string pointter;
+        public string[] points = new string[9];
         public string filename = "plik.txt";    // Filename for connection data saving and reading
 
         /* TODO: Consider changing the load and save methods to make them save everything, depending on context - 
@@ -145,27 +147,36 @@ namespace PRP_Labo
             port_starting(port_lab);
             port_lab.Write(String.Format("WH" + " " + "\r"));
             Thread.Sleep(4000);
-            WH_text.Invoke(new Action(delegate () { WH_text.Text = port_lab.ReadExisting(); }));
+            pointter = port_lab.ReadExisting();
+            WH_text.Invoke(new Action(delegate () { WH_text.Text = pointter; }));
+            point_maker(pointter);
             port_lab.Close();
-            //port_lab.DataReceived += new SerialDataReceivedEventHandler(port_DataReceived);            
-            
-        }
-        private void port_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        }  
+        
+        private void point_maker(string wuha)
         {
-            MessageBox.Show("skonczylem!");
-            SerialPort port_lab = port_call();
-            port_starting(port_lab);
-            /*byte[] bytes = new byte[port_lab.BytesToRead];
-            port_lab.Read(bytes, 0, bytes.Length);
-
-            line = System.Text.Encoding.ASCII.GetString(bytes);
-
-            WH_text.Invoke(new Action(delegate () { WH_text.Text = line; }));   
-            */
-            WH_text.Invoke(new Action(delegate () { WH_text.Text = port_lab.ReadExisting(); }));
-            Console.WriteLine(port_lab.ReadExisting());
-            port_lab.Close();
-        }
+            int j = 0;
+            string worker = wuha;
+            for (int i=0; i<worker.Length; i++)
+            {
+                if (worker[i] == ';') j++;
+                else if (worker[i] == ' ') ;
+                else
+                {
+                    if (points[j] == String.Empty) points[j] += worker[i].ToString();
+                    else points[j] = String.Concat(points[j],worker[i].ToString()); ;
+                } 
+            }
+            x_pos.Invoke(new Action(delegate () { x_pos.ResetText(); x_pos.Text = points[0]; }));
+            y_pos.Invoke(new Action(delegate () { y_pos.ResetText();  y_pos.Text = points[1]; }));
+            z_pos.Invoke(new Action(delegate () { z_pos.ResetText();  z_pos.Text = points[2]; }));
+            angle1_pos.Invoke(new Action(delegate () { angle1_pos.ResetText();  angle1_pos.Text = points[3]; }));
+            angle2_pos.Invoke(new Action(delegate () { angle2_pos.ResetText(); angle2_pos.Text = points[4]; }));
+            L1_pos.Invoke(new Action(delegate () { L1_pos.ResetText();  L1_pos.Text = points[5]; }));
+            R_pos.Invoke(new Action(delegate () { R_pos.ResetText();  R_pos.Text = points[6]; }));
+            A_pos.Invoke(new Action(delegate () { A_pos.ResetText();  A_pos.Text = points[7]; }));
+            C_pos.Invoke(new Action(delegate () { C_pos.ResetText();  C_pos.Text = points[8]; }));
+        }      
 
         private void tabPage3_Enter(object sender, EventArgs e)
         {           

@@ -53,6 +53,15 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.makro_text2 = new System.Windows.Forms.Label();
             this.makro_text = new System.Windows.Forms.Label();
+            this.x_pos = new System.Windows.Forms.TextBox();
+            this.y_pos = new System.Windows.Forms.TextBox();
+            this.z_pos = new System.Windows.Forms.TextBox();
+            this.angle1_pos = new System.Windows.Forms.TextBox();
+            this.angle2_pos = new System.Windows.Forms.TextBox();
+            this.L1_pos = new System.Windows.Forms.TextBox();
+            this.R_pos = new System.Windows.Forms.TextBox();
+            this.A_pos = new System.Windows.Forms.TextBox();
+            this.C_pos = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -196,6 +205,15 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.C_pos);
+            this.tabPage2.Controls.Add(this.A_pos);
+            this.tabPage2.Controls.Add(this.R_pos);
+            this.tabPage2.Controls.Add(this.L1_pos);
+            this.tabPage2.Controls.Add(this.angle2_pos);
+            this.tabPage2.Controls.Add(this.angle1_pos);
+            this.tabPage2.Controls.Add(this.z_pos);
+            this.tabPage2.Controls.Add(this.y_pos);
+            this.tabPage2.Controls.Add(this.x_pos);
             this.tabPage2.Controls.Add(this.WH_button);
             this.tabPage2.Controls.Add(this.WH_text);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -208,7 +226,7 @@
             // 
             // WH_button
             // 
-            this.WH_button.Location = new System.Drawing.Point(45, 20);
+            this.WH_button.Location = new System.Drawing.Point(45, 19);
             this.WH_button.Name = "WH_button";
             this.WH_button.Size = new System.Drawing.Size(60, 20);
             this.WH_button.TabIndex = 1;
@@ -218,10 +236,11 @@
             // 
             // WH_text
             // 
-            this.WH_text.Location = new System.Drawing.Point(131, 20);
+            this.WH_text.Location = new System.Drawing.Point(45, 45);
             this.WH_text.Name = "WH_text";
             this.WH_text.Size = new System.Drawing.Size(305, 20);
             this.WH_text.TabIndex = 0;
+            this.WH_text.Visible = false;
             // 
             // tabPage3
             // 
@@ -305,6 +324,69 @@
             this.makro_text.Size = new System.Drawing.Size(0, 12);
             this.makro_text.TabIndex = 0;
             // 
+            // x_pos
+            // 
+            this.x_pos.Location = new System.Drawing.Point(461, 19);
+            this.x_pos.Name = "x_pos";
+            this.x_pos.Size = new System.Drawing.Size(67, 20);
+            this.x_pos.TabIndex = 2;
+            // 
+            // y_pos
+            // 
+            this.y_pos.Location = new System.Drawing.Point(461, 45);
+            this.y_pos.Name = "y_pos";
+            this.y_pos.Size = new System.Drawing.Size(67, 20);
+            this.y_pos.TabIndex = 3;
+            // 
+            // z_pos
+            // 
+            this.z_pos.Location = new System.Drawing.Point(461, 71);
+            this.z_pos.Name = "z_pos";
+            this.z_pos.Size = new System.Drawing.Size(67, 20);
+            this.z_pos.TabIndex = 4;
+            // 
+            // angle1_pos
+            // 
+            this.angle1_pos.Location = new System.Drawing.Point(461, 97);
+            this.angle1_pos.Name = "angle1_pos";
+            this.angle1_pos.Size = new System.Drawing.Size(67, 20);
+            this.angle1_pos.TabIndex = 5;
+            // 
+            // angle2_pos
+            // 
+            this.angle2_pos.Location = new System.Drawing.Point(461, 123);
+            this.angle2_pos.Name = "angle2_pos";
+            this.angle2_pos.Size = new System.Drawing.Size(67, 20);
+            this.angle2_pos.TabIndex = 6;
+            // 
+            // L1_pos
+            // 
+            this.L1_pos.Location = new System.Drawing.Point(461, 149);
+            this.L1_pos.Name = "L1_pos";
+            this.L1_pos.Size = new System.Drawing.Size(67, 20);
+            this.L1_pos.TabIndex = 7;
+            // 
+            // R_pos
+            // 
+            this.R_pos.Location = new System.Drawing.Point(461, 175);
+            this.R_pos.Name = "R_pos";
+            this.R_pos.Size = new System.Drawing.Size(67, 20);
+            this.R_pos.TabIndex = 8;
+            // 
+            // A_pos
+            // 
+            this.A_pos.Location = new System.Drawing.Point(461, 201);
+            this.A_pos.Name = "A_pos";
+            this.A_pos.Size = new System.Drawing.Size(67, 20);
+            this.A_pos.TabIndex = 9;
+            // 
+            // C_pos
+            // 
+            this.C_pos.Location = new System.Drawing.Point(461, 227);
+            this.C_pos.Name = "C_pos";
+            this.C_pos.Size = new System.Drawing.Size(67, 20);
+            this.C_pos.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,6 +436,15 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button makro_reset;
         private System.Windows.Forms.Label makro_text2;
+        private System.Windows.Forms.TextBox C_pos;
+        private System.Windows.Forms.TextBox A_pos;
+        private System.Windows.Forms.TextBox R_pos;
+        private System.Windows.Forms.TextBox L1_pos;
+        private System.Windows.Forms.TextBox angle2_pos;
+        private System.Windows.Forms.TextBox angle1_pos;
+        private System.Windows.Forms.TextBox z_pos;
+        private System.Windows.Forms.TextBox y_pos;
+        private System.Windows.Forms.TextBox x_pos;
     }
 }
 
