@@ -26,6 +26,8 @@ namespace PRP_Labo
         public string pointter;
         public string[] points = new string[9];
         public string filename = "plik.txt";    // Filename for connection data saving and reading
+        public static float step = (float)0.1;
+        public SerialPort port_lab;
 
         /* TODO: Consider changing the load and save methods to make them save everything, depending on context - 
          * TODO: they can be remade so they take in input parameters and just save shit they are told to save 
@@ -116,7 +118,7 @@ namespace PRP_Labo
         {
             port_lab.RtsEnable = true;
             port_lab.DtrEnable = true;
-            if (port_lab.IsOpen) ;
+            if (port_lab.IsOpen);
             else port_lab.Open();
         }
         
@@ -217,7 +219,7 @@ namespace PRP_Labo
             port_starting(port_lab);
             Thread.Sleep(500);
             port_lab.Write(String.Format(text_command.Text + " " + "\r"));
-            MessageBox.Show("jestem tu!");
+            //MessageBox.Show("jestem tu!");
             port_lab.Close();
         }
 
@@ -225,6 +227,102 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_lab.Close();
+        }
+
+        private void step_scroll_Scroll(object sender, EventArgs e)
+        {
+                  step_text.Text = Convert.ToString((float)step_scroll.Value / 10);
+        }
+
+        private void speed_scroll_Scroll(object sender, EventArgs e)
+        {
+                  speed_text.Text = Convert.ToString(speed_scroll.Value);
+        }
+
+        private void confirm_Click(object sender, EventArgs e)
+        {
+                  step = (float)step_scroll.Value / 10;
+                  port_lab.Write(String.Format("SP " + speed_text.Text + "\r"));
+        }
+
+        private void DJ1_plus_Click(object sender, EventArgs e)
+        {
+                  port_lab.Write(String.Format("DJ 1," + step + "\r"));
+        }
+
+        private void DJ1_minus_Click(object sender, EventArgs e)
+        {
+                  port_lab.Write(String.Format("DJ 1,-" + step + "\r"));
+        }
+
+        private void DJ2_plus_Click(object sender, EventArgs e)
+        {
+                  port_lab.Write(String.Format("DJ 2," + step + "\r"));
+        }
+
+        private void DJ2_minus_Click(object sender, EventArgs e)
+        {
+                  port_lab.Write(String.Format("DJ 2,-" + step + "\r"));
+        }
+
+        private void DJ3_plus_Click(object sender, EventArgs e)
+        {
+                  port_lab.Write(String.Format("DJ 3," + step + "\r"));
+        }
+
+        private void DJ3_minus_Click(object sender, EventArgs e)
+        {
+                  port_lab.Write(String.Format("DJ 3,-" + step + "\r"));
+        }
+
+        private void DJ4_plus_Click(object sender, EventArgs e)
+        {
+                  port_lab.Write(String.Format("DJ 4," + step + "\r"));
+        }
+
+        private void DJ4_minus_Click(object sender, EventArgs e)
+        {
+                  port_lab.Write(String.Format("DJ 4,-" + step + "\r"));
+        }
+
+        private void DJ5_plus_Click(object sender, EventArgs e)
+        {
+                  port_lab.Write(String.Format("DJ 5," + step + "\r"));
+        }
+
+        private void DJ5_minus_Click(object sender, EventArgs e)
+        {
+                  port_lab.Write(String.Format("DJ 5,-" + step + "\r"));
+        }
+
+        private void x_plus_Click(object sender, EventArgs e)
+        {
+                  port_lab.Write(String.Format("DS " + step + ",0,0" + "\r"));
+        }
+
+        private void x_minus_Click(object sender, EventArgs e)
+        {
+                  port_lab.Write(String.Format("DS -" + step + ",0,0" + "\r"));
+        }
+
+        private void y_plus_Click(object sender, EventArgs e)
+        {
+                  port_lab.Write(String.Format("DS 0," + step + ",0" + "\r"));
+        }
+
+        private void y_minus_Click(object sender, EventArgs e)
+        {
+                  port_lab.Write(String.Format("DS 0,-" + step + ",0" + "\r"));
+        }
+
+        private void z_plus_Click(object sender, EventArgs e)
+        {
+                  port_lab.Write(String.Format("DS 0,0," + step +  "\r"));
+        }
+
+        private void z_minus_Click(object sender, EventArgs e)
+        {
+                  port_lab.Write(String.Format("DS 0,0,-" + step + "\r"));
         }
     }
 }

@@ -34,3 +34,15 @@ C:\Users\pc\Desktop\common\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.csprojResolveAss
 C:\Users\pc\Desktop\common\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.Form1.resources
 C:\Users\pc\Desktop\common\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.Properties.Resources.resources
 C:\Users\pc\Desktop\common\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.csproj.GenerateResource.Cache
+C:\Users\Ola\Desktop\PRP_Labo\PRP_Labo\bin\Debug\PRP_Labo.exe.config
+C:\Users\Ola\Desktop\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.exe
+C:\Users\Ola\Desktop\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.pdb
+C:\Users\Ola\Desktop\PRP_Labo\PRP_Labo\bin\Debug\PRP_Labo.exe
+C:\Users\Ola\Desktop\PRP_Labo\PRP_Labo\bin\Debug\PRP_Labo.pdb
+C:\Users\Ola\Desktop\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.csprojResolveAssemblyReference.cache
+C:\Users\Ola\Desktop\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.Form1.resources
+C:\Users\Ola\Desktop\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.Properties.Resources.resources
+C:\Users\Ola\Desktop\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.csproj.GenerateResource.Cache
+C:\Users\Ola\Desktop\Nowy folder\PRP_Labo\PRP_Labo\bin\Debug\PRP_Labo.exe.config
+C:\Users\Ola\Desktop\Nowy folder\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.exe
+C:\Users\Ola\Desktop\Nowy folder\PRP_Labo\PRP_Labo\obj\Debug\PRP_Labo.pdb
