@@ -241,88 +241,139 @@ namespace PRP_Labo
 
         private void confirm_Click(object sender, EventArgs e)
         {
-                  step = (float)step_scroll.Value / 10;
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            step = (float)step_scroll.Value / 10;
                   port_lab.Write(String.Format("SP " + speed_text.Text + "\r"));
+            port_lab.Close();
         }
 
         private void DJ1_plus_Click(object sender, EventArgs e)
         {
-                  port_lab.Write(String.Format("DJ 1," + step + "\r"));
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            port_lab.Write(String.Format("DJ 1," + step + "\r"));
+            port_lab.Close();
         }
 
         private void DJ1_minus_Click(object sender, EventArgs e)
         {
-                  port_lab.Write(String.Format("DJ 1,-" + step + "\r"));
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            port_lab.Write(String.Format("DJ 1,-" + step + "\r"));
+            port_lab.Close();
         }
 
         private void DJ2_plus_Click(object sender, EventArgs e)
         {
-                  port_lab.Write(String.Format("DJ 2," + step + "\r"));
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            port_lab.Write(String.Format("DJ 2," + step + "\r"));
+            port_lab.Close();
         }
 
         private void DJ2_minus_Click(object sender, EventArgs e)
         {
-                  port_lab.Write(String.Format("DJ 2,-" + step + "\r"));
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            port_lab.Write(String.Format("DJ 2,-" + step + "\r"));
+            port_lab.Close();
         }
 
         private void DJ3_plus_Click(object sender, EventArgs e)
         {
-                  port_lab.Write(String.Format("DJ 3," + step + "\r"));
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            port_lab.Write(String.Format("DJ 3," + step + "\r"));
+            port_lab.Close();
         }
 
         private void DJ3_minus_Click(object sender, EventArgs e)
         {
-                  port_lab.Write(String.Format("DJ 3,-" + step + "\r"));
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            port_lab.Write(String.Format("DJ 3,-" + step + "\r"));
+            port_lab.Close();
         }
 
         private void DJ4_plus_Click(object sender, EventArgs e)
         {
-                  port_lab.Write(String.Format("DJ 4," + step + "\r"));
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            port_lab.Write(String.Format("DJ 4," + step + "\r"));
+            port_lab.Close();
         }
 
         private void DJ4_minus_Click(object sender, EventArgs e)
         {
-                  port_lab.Write(String.Format("DJ 4,-" + step + "\r"));
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            port_lab.Write(String.Format("DJ 4,-" + step + "\r"));
+            port_lab.Close();
         }
 
         private void DJ5_plus_Click(object sender, EventArgs e)
         {
-                  port_lab.Write(String.Format("DJ 5," + step + "\r"));
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            port_lab.Write(String.Format("DJ 5," + step + "\r"));
+            port_lab.Close();
         }
 
         private void DJ5_minus_Click(object sender, EventArgs e)
         {
-                  port_lab.Write(String.Format("DJ 5,-" + step + "\r"));
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            port_lab.Write(String.Format("DJ 5,-" + step + "\r"));
+            port_lab.Close();
         }
 
         private void x_plus_Click(object sender, EventArgs e)
         {
-                  port_lab.Write(String.Format("DS " + step + ",0,0" + "\r"));
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            port_lab.Write(String.Format("DS " + step + ",0,0" + "\r"));
+            port_lab.Close();
         }
 
         private void x_minus_Click(object sender, EventArgs e)
         {
-                  port_lab.Write(String.Format("DS -" + step + ",0,0" + "\r"));
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            port_lab.Write(String.Format("DS -" + step + ",0,0" + "\r"));
+            port_lab.Close();
         }
 
         private void y_plus_Click(object sender, EventArgs e)
         {
-                  port_lab.Write(String.Format("DS 0," + step + ",0" + "\r"));
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            port_lab.Write(String.Format("DS 0," + step + ",0" + "\r"));
+            port_lab.Close();
         }
 
         private void y_minus_Click(object sender, EventArgs e)
         {
-                  port_lab.Write(String.Format("DS 0,-" + step + ",0" + "\r"));
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            port_lab.Write(String.Format("DS 0,-" + step + ",0" + "\r"));
+            port_lab.Close();
         }
 
         private void z_plus_Click(object sender, EventArgs e)
         {
-                  port_lab.Write(String.Format("DS 0,0," + step +  "\r"));
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            port_lab.Write(String.Format("DS 0,0," + step +  "\r"));
+            port_lab.Close();
         }
 
         private void z_minus_Click(object sender, EventArgs e)
         {
-                  port_lab.Write(String.Format("DS 0,0,-" + step + "\r"));
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            port_lab.Write(String.Format("DS 0,0,-" + step + "\r"));
+            port_lab.Close();
         }
     }
 }
