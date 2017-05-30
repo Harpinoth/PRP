@@ -21,12 +21,14 @@ namespace PRP_Labo
 
         }
          
-        string crlf = Convert.ToString(Convert.ToChar(10));
+        string crlf = Convert.ToString(Convert.ToChar(13)) + Convert.ToString(Convert.ToChar(10));
         int linenumber = 10;
         public string pointter;
-        public string[] points = new string[9];
+        public string step2;
+        public string[] makro_list = new string[1001];
+        public string[] points = new string[10];
         public string filename = "plik.txt";    // Filename for connection data saving and reading
-        public static float step = (float)0.1;
+        public static double step = 0.1;
         public SerialPort port_lab;
 
         /* TODO: Consider changing the load and save methods to make them save everything, depending on context - 
@@ -141,14 +143,16 @@ namespace PRP_Labo
         private void connect_Click(object sender, EventArgs e)
         {
             SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            port_lab.Close();
         }
 
         private void WH_button_Click(object sender, EventArgs e)
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            port_lab.Write(String.Format("WH" + " " + "\r"));
-            Thread.Sleep(4000);
+            port_lab.Write(String.Format("WH"+"\r"));
+            Thread.Sleep(750);
             pointter = port_lab.ReadExisting();
             WH_text.Invoke(new Action(delegate () { WH_text.Text = pointter; }));
             point_maker(pointter);
@@ -158,14 +162,14 @@ namespace PRP_Labo
         private void point_maker(string wuha)
         {
             int j = 0;
-            string worker = wuha;
+            string worker = wuha.TrimEnd(new char[] {'\n', '\r', ' '});
             for (int i=0; i<worker.Length; i++)
             {
-                if (worker[i] == ';') j++;
+                if (worker[i] == ',') j++;
                 else if (worker[i] == ' ') ;
                 else
                 {
-                    if (points[j] == String.Empty) points[j] += worker[i].ToString();
+                    if (String.IsNullOrEmpty(points[j])) points[j] += worker[i].ToString();
                     else points[j] = String.Concat(points[j],worker[i].ToString()); ;
                 } 
             }
@@ -175,9 +179,10 @@ namespace PRP_Labo
             angle1_pos.Invoke(new Action(delegate () { angle1_pos.ResetText();  angle1_pos.Text = points[3]; }));
             angle2_pos.Invoke(new Action(delegate () { angle2_pos.ResetText(); angle2_pos.Text = points[4]; }));
             L1_pos.Invoke(new Action(delegate () { L1_pos.ResetText();  L1_pos.Text = points[5]; }));
-            R_pos.Invoke(new Action(delegate () { R_pos.ResetText();  R_pos.Text = points[6]; }));
-            A_pos.Invoke(new Action(delegate () { A_pos.ResetText();  A_pos.Text = points[7]; }));
-            C_pos.Invoke(new Action(delegate () { C_pos.ResetText();  C_pos.Text = points[8]; }));
+            L2_pos.Invoke(new Action(delegate () { L2_pos.ResetText(); L2_pos.Text = points[6]; }));
+            R_pos.Invoke(new Action(delegate () { R_pos.ResetText();  R_pos.Text = points[7]; }));
+            A_pos.Invoke(new Action(delegate () { A_pos.ResetText();  A_pos.Text = points[8]; }));
+            C_pos.Invoke(new Action(delegate () { C_pos.ResetText();  C_pos.Text = points[9]; }));
         }      
 
         private void tabPage3_Enter(object sender, EventArgs e)
@@ -186,47 +191,44 @@ namespace PRP_Labo
         }
 
         private void add_command_Click(object sender, EventArgs e)
-        {
-            if (linenumber < 360)
-            {
-                if (linenumber < 190)
-                {
-                    makro_text.Text += linenumber + " " + text_command.Text + crlf;
-                    linenumber += 10;
-                }
-                else
-                {
-                    makro_text2.Text += linenumber + " " + text_command.Text + crlf;
-                    linenumber += 10;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Osiągnięto maksymalną długość makra!");
-                makro_text2.Text += linenumber + " " + "ED" + crlf;
-            }
+        {            
+                makro_text.Text += linenumber + " " + text_command.Text + crlf;
+                makro_list[(linenumber-1)/10] = text_command.Text;
+                linenumber += 10;               
         }
 
         private void makro_reset_Click(object sender, EventArgs e)
         {
             makro_text.ResetText();
-            makro_text2.ResetText();
+            makro_list = new string[1001];
+        }
+
+        private void send_single_command_Click(object sender, EventArgs e)
+        {
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            Thread.Sleep(500);
+            port_lab.Write(String.Format(text_command.Text + "\r"));
+            port_lab.Close();
         }
 
         private void send_command_Click(object sender, EventArgs e)
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            Thread.Sleep(500);
-            port_lab.Write(String.Format(text_command.Text + " " + "\r"));
-            //MessageBox.Show("jestem tu!");
-            port_lab.Close();
-        }
+            for (int i = 0; i < makro_list.Length; i++)
+            {
+                Thread.Sleep(750);
+                if (string.IsNullOrEmpty(makro_list[i])) break;
+                port_lab.Write(String.Format(makro_list[i]+crlf));                
+            }
+            port_lab.Write(String.Format("ED" + "\r"));
+            port_lab.Close();        }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             SerialPort port_lab = port_call();
-            port_lab.Close();
+            if(port_lab.IsOpen)  port_lab.Close();
         }
 
         private void step_scroll_Scroll(object sender, EventArgs e)
@@ -243,8 +245,21 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            step = (float)step_scroll.Value / 10;
-                  port_lab.Write(String.Format("SP " + speed_text.Text + "\r"));
+            step = Convert.ToDouble(step_scroll.Value) / 10;
+            step2 = Convert.ToString(step);
+            string helper2 = String.Empty;
+            for (int i = 0; i<step2.Length; i++)
+            {
+                if (step2[i] == ',')
+                {
+                    helper2 += '.';
+                }
+                else helper2 += step2[i];
+            }
+            step2 = helper2;
+            port_lab.Write(String.Format("SP " + speed_text.Text + "\r" + "\n"));
+            Thread.Sleep(550);
+            port_lab.Write(String.Format("OVR " + override_text.Text + "\r"));
             port_lab.Close();
         }
 
@@ -252,7 +267,7 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            port_lab.Write(String.Format("DJ 1," + step + "\r"));
+            port_lab.Write(String.Format("DJ 1," + step2 + "\r"));
             port_lab.Close();
         }
 
@@ -260,7 +275,7 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            port_lab.Write(String.Format("DJ 1,-" + step + "\r"));
+            port_lab.Write(String.Format("DJ 1,-" + step2 + "\r"));
             port_lab.Close();
         }
 
@@ -268,7 +283,7 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            port_lab.Write(String.Format("DJ 2," + step + "\r"));
+            port_lab.Write(String.Format("DJ 2," + step2 + "\r"));
             port_lab.Close();
         }
 
@@ -276,7 +291,7 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            port_lab.Write(String.Format("DJ 2,-" + step + "\r"));
+            port_lab.Write(String.Format("DJ 2,-" + step2 + "\r"));
             port_lab.Close();
         }
 
@@ -284,7 +299,7 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            port_lab.Write(String.Format("DJ 3," + step + "\r"));
+            port_lab.Write(String.Format("DJ 3," + step2 + "\r"));
             port_lab.Close();
         }
 
@@ -292,7 +307,7 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            port_lab.Write(String.Format("DJ 3,-" + step + "\r"));
+            port_lab.Write(String.Format("DJ 3,-" + step2 + "\r"));
             port_lab.Close();
         }
 
@@ -300,7 +315,7 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            port_lab.Write(String.Format("DJ 4," + step + "\r"));
+            port_lab.Write(String.Format("DJ 4," + step2 + "\r"));
             port_lab.Close();
         }
 
@@ -308,7 +323,7 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            port_lab.Write(String.Format("DJ 4,-" + step + "\r"));
+            port_lab.Write(String.Format("DJ 4,-" + step2 + "\r"));
             port_lab.Close();
         }
 
@@ -316,7 +331,7 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            port_lab.Write(String.Format("DJ 5," + step + "\r"));
+            port_lab.Write(String.Format("DJ 5," + step2 + "\r"));
             port_lab.Close();
         }
 
@@ -324,7 +339,7 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            port_lab.Write(String.Format("DJ 5,-" + step + "\r"));
+            port_lab.Write(String.Format("DJ 5,-" + step2 + "\r"));
             port_lab.Close();
         }
 
@@ -332,7 +347,7 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            port_lab.Write(String.Format("DS " + step + ",0,0" + "\r"));
+            port_lab.Write(String.Format("DS " + step2 + ",0,0" + "\r"));
             port_lab.Close();
         }
 
@@ -340,7 +355,7 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            port_lab.Write(String.Format("DS -" + step + ",0,0" + "\r"));
+            port_lab.Write(String.Format("DS -" + step2 + ",0,0" + "\r"));
             port_lab.Close();
         }
 
@@ -348,7 +363,7 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            port_lab.Write(String.Format("DS 0," + step + ",0" + "\r"));
+            port_lab.Write(String.Format("DS 0," + step2 + ",0" + "\r"));
             port_lab.Close();
         }
 
@@ -356,7 +371,7 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            port_lab.Write(String.Format("DS 0,-" + step + ",0" + "\r"));
+            port_lab.Write(String.Format("DS 0,-" + step2 + ",0" + "\r"));
             port_lab.Close();
         }
 
@@ -364,7 +379,7 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            port_lab.Write(String.Format("DS 0,0," + step +  "\r"));
+            port_lab.Write(String.Format("DS 0,0," + step2 +  "\r"));
             port_lab.Close();
         }
 
@@ -372,7 +387,28 @@ namespace PRP_Labo
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
-            port_lab.Write(String.Format("DS 0,0,-" + step + "\r"));
+            port_lab.Write(String.Format("DS 0,0,-" + step2 + "\r"));
+            port_lab.Close();
+        }
+
+        private void point_listadder_Click(object sender, EventArgs e)
+        {
+            point_list.Text += x_pos.Text + " ; " + y_pos.Text + " ; " + z_pos.Text + " ; " + angle1_pos.Text + " ; " + angle2_pos.Text + " ; " + L1_pos.Text + " ; " + R_pos.Text + " ; " + A_pos.Text + " ; " + C_pos.Text + crlf;
+        }
+
+        private void override_scroll_Scroll_1(object sender, EventArgs e)
+        {
+            override_text.Text = Convert.ToString(override_scroll.Value);
+        }
+
+        private void change_Click(object sender, EventArgs e)
+        {
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            Thread.Sleep(750);
+            String wysylka = String.Format("MP " + x_pos.Text + "," + y_pos.Text + "," + z_pos.Text + "," + angle1_pos.Text + "," + angle2_pos.Text + "," + L1_pos.Text + "," + L2_pos.Text + "," + R_pos.Text + "," + A_pos.Text + "\r");
+            port_lab.Write(wysylka);
+            Console.Write(BitConverter.ToString(Encoding.Default.GetBytes(C_pos.Text)));
             port_lab.Close();
         }
     }
