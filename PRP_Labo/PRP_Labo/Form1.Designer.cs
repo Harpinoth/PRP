@@ -44,6 +44,8 @@
             this.data_baud = new System.Windows.Forms.TextBox();
             this.data_port = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label28 = new System.Windows.Forms.Label();
+            this.L2_pos = new System.Windows.Forms.TextBox();
             this.point_listadder = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.point_list = new System.Windows.Forms.Label();
@@ -119,8 +121,11 @@
             this.x_minus = new System.Windows.Forms.Button();
             this.x_plus = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.L2_pos = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.help_panel = new System.Windows.Forms.Panel();
+            this.label32 = new System.Windows.Forms.Label();
+            this.help_combo = new System.Windows.Forms.ComboBox();
+            this.help_text = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -135,6 +140,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            this.help_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -145,6 +152,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Location = new System.Drawing.Point(23, 15);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -321,6 +329,22 @@
             this.tabPage2.Size = new System.Drawing.Size(549, 279);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pozycje";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(36, 216);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(22, 13);
+            this.label28.TabIndex = 26;
+            this.label28.Text = "L2:";
+            // 
+            // L2_pos
+            // 
+            this.L2_pos.Location = new System.Drawing.Point(77, 209);
+            this.L2_pos.Name = "L2_pos";
+            this.L2_pos.Size = new System.Drawing.Size(67, 20);
+            this.L2_pos.TabIndex = 25;
             // 
             // point_listadder
             // 
@@ -1059,21 +1083,76 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // L2_pos
+            // tabPage7
             // 
-            this.L2_pos.Location = new System.Drawing.Point(77, 209);
-            this.L2_pos.Name = "L2_pos";
-            this.L2_pos.Size = new System.Drawing.Size(67, 20);
-            this.L2_pos.TabIndex = 25;
+            this.tabPage7.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabPage7.Controls.Add(this.help_panel);
+            this.tabPage7.Controls.Add(this.label32);
+            this.tabPage7.Controls.Add(this.help_combo);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(549, 279);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Pomoc";
             // 
-            // label28
+            // help_panel
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(36, 216);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(22, 13);
-            this.label28.TabIndex = 26;
-            this.label28.Text = "L2:";
+            this.help_panel.AutoScroll = true;
+            this.help_panel.Controls.Add(this.help_text);
+            this.help_panel.Location = new System.Drawing.Point(235, 35);
+            this.help_panel.Name = "help_panel";
+            this.help_panel.Size = new System.Drawing.Size(280, 222);
+            this.help_panel.TabIndex = 2;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(51, 23);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(115, 13);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "Wybierz hasło pomocy";
+            // 
+            // help_combo
+            // 
+            this.help_combo.FormattingEnabled = true;
+            this.help_combo.Items.AddRange(new object[] {
+            "<wybierz>",
+            "OVR",
+            "SP",
+            "PD",
+            "HE",
+            "WH",
+            "DJ",
+            "DS",
+            "DW",
+            "IP",
+            "DP",
+            "MP",
+            "MO",
+            "MS",
+            "MA",
+            "MC",
+            "MJ",
+            "MR",
+            "MRA",
+            "GC",
+            "GO"});
+            this.help_combo.Location = new System.Drawing.Point(49, 55);
+            this.help_combo.Name = "help_combo";
+            this.help_combo.Size = new System.Drawing.Size(121, 21);
+            this.help_combo.TabIndex = 0;
+            this.help_combo.Text = "<wybierz>";
+            this.help_combo.SelectedIndexChanged += new System.EventHandler(this.help_combo_SelectedIndexChanged_1);
+            // 
+            // help_text
+            // 
+            this.help_text.AutoSize = true;
+            this.help_text.Location = new System.Drawing.Point(18, 20);
+            this.help_text.Name = "help_text";
+            this.help_text.Size = new System.Drawing.Size(0, 13);
+            this.help_text.TabIndex = 0;
             // 
             // Form1
             // 
@@ -1105,6 +1184,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            this.help_panel.ResumeLayout(false);
+            this.help_panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1204,6 +1287,11 @@
         private System.Windows.Forms.Button send_single_command;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox L2_pos;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.ComboBox help_combo;
+        private System.Windows.Forms.Panel help_panel;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label help_text;
     }
 }
 

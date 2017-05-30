@@ -411,5 +411,75 @@ namespace PRP_Labo
             Console.Write(BitConverter.ToString(Encoding.Default.GetBytes(C_pos.Text)));
             port_lab.Close();
         }
+
+        private void help_combo_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            switch (help_combo.Text)
+            {
+                case "OVR":
+                    help_text.Text = "Override, dokonuje procentowego przeskalowania prędkości poruszania się" + crlf + "Przykład komendy: OVR 60";
+                    break;
+                case "SP":
+                    help_text.Text = "Speed, pozwala na wybranie jednego z ustawień prędkości manipulatora" + crlf + "Przykład komendy: SP 6";
+                    break;
+                case "PD":
+                    help_text.Text = "Point define, pozwala na zdefiniowanie punktu, podanego przez użytkownika, o danym numerze w liście punktów" + crlf + "Przykład komendy: PD 5, 420, -246.2, 208.11, 190.42, 155.30, 1650.85, R, A, C";
+                    break;
+                case "HE":
+                    help_text.Text = "Here, pozwala na zdefiniowanie aktualnego położenia jako punkt o danym numerze w liście punktów" + crlf + "Przykład komendy: HE 8";
+                    break;
+                case "WH":
+                    help_text.Text = "Where, pozwala na odczytanie aktualnego położenia" + crlf + "Przykład komendy: WH" + crlf + "Funkcjonalność zaimplementowana w zakładce \"Pozycje\"";
+                    break;
+                case "DJ":
+                    help_text.Text = "Draw joint, pozwala na obrót wybranego przegubu o zadany kąt" + crlf + "Przykład komendy: DJ 2,45";
+                    break;
+                case "DS":
+                    help_text.Text = "Draw straight, pozwala na przesunięcie o zadaną wartość w układzie kartezjańskim, dokonując interpolacji liniowej" + crlf + "Przykład komendy: DS 10,0,0";
+                    break;
+                case "DW":
+                    help_text.Text = "Draw, pozwala na przesunięcie o zadaną wartość w układzie kartezjańskim, dokonując interpolacji przegubowej" + crlf + "Przykład komendy: DW 10,0,0";
+                    break;
+                case "IP":
+                    help_text.Text = "Increment position, pozwala na przemieszczenie się do następnej w kolejności pozycji, dokonując interpolacji przegubowej" + crlf + "Przykład komendy: IP";
+                    break;
+                case "DP":
+                    help_text.Text = "Decrement position, pozwala na przemieszczenie się do poprzedniej w kolejności pozycji, dokonując interpolacji przegubowej" + crlf + "Przykład komendy: DP";
+                    break;
+                case "MP":
+                    help_text.Text = "Move position, pozwala na przemieszczenie się do podanej pozycji, dokonując interpolacji przegubowej" + crlf + "Przykład komendy: MP 420, -246.2, 208.11, 190.42, 155.30, 1650.85, R, A, C";
+                    break;
+                case "MO":
+                    help_text.Text = "Move, pozwala na przemieszczenie się do pozycji z listy, o podanym numerze" + crlf + "Przykład komendy: MO 13";
+                    break;
+                case "MS":
+                    help_text.Text = "Move straight, pozwala na przemieszczenie się do pozycji z listy, dokonując interpolacji liniowej" + crlf + "Przykład komendy: MS 18";
+                    break;
+                case "MA":
+                    help_text.Text = "Move approach, pozwala na przemieszczenie się pomiędzy dwoma pozycjami" + crlf + "Przykład komendy: MA 6,13";
+                    break;
+                case "MC":
+                    help_text.Text = "Move continuous, pozwala na przemieszczenie się po kolei po wszystkich pozycjach między dwoma podanymi pozycjami z listy" + crlf + "Przykład komendy: MC 1, 45";
+                    break;
+                case "MJ":
+                    help_text.Text = "Move joint, pozwala na obrócenie przegubu od obecnej pozycji o zadany kąt" + crlf + "Przykład komendy: MJ 10,0,0,0,0,0";
+                    break;
+                case "MR":
+                    help_text.Text = "Pozwala na przemieszczenie się po łuku określonym na podstawie trzech podanych pozycji z listy" + crlf + "Przykład komendy: MR 1,5,77";
+                    break;
+                case "MRA":
+                    help_text.Text = "Pozwala na wykonanie łuku, gdzie poprzednie wywołanie tej funkcji będzie pierwszym punktem łuku, a następne ostatnim" + crlf + "Przykład komendy: MRA 12";
+                    break;
+                case "GC":
+                    help_text.Text = "Grip close, pozwala na zamknięcie chwytaka" + crlf + "Przykład komendy: GC";
+                    break;
+                case "GO":
+                    help_text.Text = "Grip open, pozwala na otwarcie chwytaka" + crlf + "Przykład komendy: GO";
+                    break;
+                default:
+                    help_text.Text = "";
+                    break;
+            }
+        }
     }
 }
