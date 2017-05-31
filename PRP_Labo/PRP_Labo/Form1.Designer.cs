@@ -44,6 +44,7 @@
             this.data_baud = new System.Windows.Forms.TextBox();
             this.data_port = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label33 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.L2_pos = new System.Windows.Forms.TextBox();
             this.point_listadder = new System.Windows.Forms.Button();
@@ -123,9 +124,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.help_panel = new System.Windows.Forms.Panel();
+            this.help_text = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.help_combo = new System.Windows.Forms.ComboBox();
-            this.help_text = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -296,6 +297,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabPage2.Controls.Add(this.label33);
             this.tabPage2.Controls.Add(this.label28);
             this.tabPage2.Controls.Add(this.L2_pos);
             this.tabPage2.Controls.Add(this.point_listadder);
@@ -330,6 +332,15 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Pozycje";
             // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(218, 136);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(64, 13);
+            this.label33.TabIndex = 27;
+            this.label33.Text = "Lista pozycji";
+            // 
             // label28
             // 
             this.label28.AutoSize = true;
@@ -348,7 +359,7 @@
             // 
             // point_listadder
             // 
-            this.point_listadder.Location = new System.Drawing.Point(101, 235);
+            this.point_listadder.Location = new System.Drawing.Point(325, 127);
             this.point_listadder.Name = "point_listadder";
             this.point_listadder.Size = new System.Drawing.Size(89, 24);
             this.point_listadder.TabIndex = 24;
@@ -375,7 +386,7 @@
             // 
             // change
             // 
-            this.change.Location = new System.Drawing.Point(378, 98);
+            this.change.Location = new System.Drawing.Point(378, 86);
             this.change.Name = "change";
             this.change.Size = new System.Drawing.Size(60, 23);
             this.change.TabIndex = 22;
@@ -1105,6 +1116,14 @@
             this.help_panel.Size = new System.Drawing.Size(280, 222);
             this.help_panel.TabIndex = 2;
             // 
+            // help_text
+            // 
+            this.help_text.AutoSize = true;
+            this.help_text.Location = new System.Drawing.Point(18, 20);
+            this.help_text.Name = "help_text";
+            this.help_text.Size = new System.Drawing.Size(0, 13);
+            this.help_text.TabIndex = 0;
+            // 
             // label32
             // 
             this.label32.AutoSize = true;
@@ -1145,14 +1164,6 @@
             this.help_combo.TabIndex = 0;
             this.help_combo.Text = "<wybierz>";
             this.help_combo.SelectedIndexChanged += new System.EventHandler(this.help_combo_SelectedIndexChanged_1);
-            // 
-            // help_text
-            // 
-            this.help_text.AutoSize = true;
-            this.help_text.Location = new System.Drawing.Point(18, 20);
-            this.help_text.Name = "help_text";
-            this.help_text.Size = new System.Drawing.Size(0, 13);
-            this.help_text.TabIndex = 0;
             // 
             // Form1
             // 
@@ -1292,6 +1303,7 @@
         private System.Windows.Forms.Panel help_panel;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label help_text;
+        private System.Windows.Forms.Label label33;
     }
 }
 

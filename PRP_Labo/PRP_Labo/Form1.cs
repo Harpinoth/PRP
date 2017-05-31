@@ -118,10 +118,17 @@ namespace PRP_Labo
 
         private void port_starting(SerialPort port_lab)
         {
-            port_lab.RtsEnable = true;
-            port_lab.DtrEnable = true;
-            if (port_lab.IsOpen);
-            else port_lab.Open();
+            try
+            {
+                port_lab.RtsEnable = true;
+                port_lab.DtrEnable = true;
+                if (port_lab.IsOpen) ;
+                else port_lab.Open();
+            }
+            catch
+            {
+                MessageBox.Show("Brak dostępu do portu");
+            }
         }
         
 
@@ -161,6 +168,7 @@ namespace PRP_Labo
         
         private void point_maker(string wuha)
         {
+            points = new string[10];
             int j = 0;
             string worker = wuha.TrimEnd(new char[] {'\n', '\r', ' '});
             for (int i=0; i<worker.Length; i++)
@@ -173,7 +181,7 @@ namespace PRP_Labo
                     else points[j] = String.Concat(points[j],worker[i].ToString()); ;
                 } 
             }
-            x_pos.Invoke(new Action(delegate () { x_pos.ResetText(); x_pos.Text = points[0]; }));
+            x_pos.Invoke(new Action(delegate () { x_pos.ResetText(); x_pos.Text = points[0];  }));
             y_pos.Invoke(new Action(delegate () { y_pos.ResetText();  y_pos.Text = points[1]; }));
             z_pos.Invoke(new Action(delegate () { z_pos.ResetText();  z_pos.Text = points[2]; }));
             angle1_pos.Invoke(new Action(delegate () { angle1_pos.ResetText();  angle1_pos.Text = points[3]; }));
