@@ -127,6 +127,7 @@
             this.help_text = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.help_combo = new System.Windows.Forms.ComboBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -889,21 +890,21 @@
             // 
             // DJ5_minus
             // 
-            this.DJ5_minus.Location = new System.Drawing.Point(175, 141);
+            this.DJ5_minus.Location = new System.Drawing.Point(188, 142);
             this.DJ5_minus.Name = "DJ5_minus";
-            this.DJ5_minus.Size = new System.Drawing.Size(32, 23);
+            this.DJ5_minus.Size = new System.Drawing.Size(41, 23);
             this.DJ5_minus.TabIndex = 30;
-            this.DJ5_minus.Text = "-";
+            this.DJ5_minus.Text = "Góra";
             this.DJ5_minus.UseVisualStyleBackColor = true;
             this.DJ5_minus.Click += new System.EventHandler(this.DJ5_minus_Click);
             // 
             // DJ5_plus
             // 
-            this.DJ5_plus.Location = new System.Drawing.Point(141, 141);
+            this.DJ5_plus.Location = new System.Drawing.Point(139, 142);
             this.DJ5_plus.Name = "DJ5_plus";
-            this.DJ5_plus.Size = new System.Drawing.Size(32, 23);
+            this.DJ5_plus.Size = new System.Drawing.Size(43, 23);
             this.DJ5_plus.TabIndex = 29;
-            this.DJ5_plus.Text = "+";
+            this.DJ5_plus.Text = "Dół";
             this.DJ5_plus.UseVisualStyleBackColor = true;
             this.DJ5_plus.Click += new System.EventHandler(this.DJ5_plus_Click);
             // 
@@ -911,79 +912,79 @@
             // 
             this.DJ4_minus.Location = new System.Drawing.Point(226, 38);
             this.DJ4_minus.Name = "DJ4_minus";
-            this.DJ4_minus.Size = new System.Drawing.Size(32, 23);
+            this.DJ4_minus.Size = new System.Drawing.Size(48, 23);
             this.DJ4_minus.TabIndex = 27;
-            this.DJ4_minus.Text = "-";
+            this.DJ4_minus.Text = "Góra";
             this.DJ4_minus.UseVisualStyleBackColor = true;
             this.DJ4_minus.Click += new System.EventHandler(this.DJ4_minus_Click);
             // 
             // DJ4_plus
             // 
-            this.DJ4_plus.Location = new System.Drawing.Point(188, 38);
+            this.DJ4_plus.Location = new System.Drawing.Point(175, 38);
             this.DJ4_plus.Name = "DJ4_plus";
-            this.DJ4_plus.Size = new System.Drawing.Size(32, 23);
+            this.DJ4_plus.Size = new System.Drawing.Size(45, 23);
             this.DJ4_plus.TabIndex = 26;
-            this.DJ4_plus.Text = "+";
+            this.DJ4_plus.Text = "Dół";
             this.DJ4_plus.UseVisualStyleBackColor = true;
             this.DJ4_plus.Click += new System.EventHandler(this.DJ4_plus_Click);
             // 
             // DJ3_minus
             // 
-            this.DJ3_minus.Location = new System.Drawing.Point(363, 50);
+            this.DJ3_minus.Location = new System.Drawing.Point(354, 38);
             this.DJ3_minus.Name = "DJ3_minus";
-            this.DJ3_minus.Size = new System.Drawing.Size(32, 23);
+            this.DJ3_minus.Size = new System.Drawing.Size(42, 23);
             this.DJ3_minus.TabIndex = 24;
-            this.DJ3_minus.Text = "-";
+            this.DJ3_minus.Text = "Góra";
             this.DJ3_minus.UseVisualStyleBackColor = true;
             this.DJ3_minus.Click += new System.EventHandler(this.DJ3_minus_Click);
             // 
             // DJ3_plus
             // 
-            this.DJ3_plus.Location = new System.Drawing.Point(325, 50);
+            this.DJ3_plus.Location = new System.Drawing.Point(304, 38);
             this.DJ3_plus.Name = "DJ3_plus";
-            this.DJ3_plus.Size = new System.Drawing.Size(32, 23);
+            this.DJ3_plus.Size = new System.Drawing.Size(44, 23);
             this.DJ3_plus.TabIndex = 23;
-            this.DJ3_plus.Text = "+";
+            this.DJ3_plus.Text = "Dół";
             this.DJ3_plus.UseVisualStyleBackColor = true;
             this.DJ3_plus.Click += new System.EventHandler(this.DJ3_plus_Click);
             // 
             // DJ2_minus
             // 
-            this.DJ2_minus.Location = new System.Drawing.Point(213, 191);
+            this.DJ2_minus.Location = new System.Drawing.Point(202, 191);
             this.DJ2_minus.Name = "DJ2_minus";
-            this.DJ2_minus.Size = new System.Drawing.Size(32, 23);
+            this.DJ2_minus.Size = new System.Drawing.Size(43, 23);
             this.DJ2_minus.TabIndex = 19;
-            this.DJ2_minus.Text = "-";
+            this.DJ2_minus.Text = "Góra";
             this.DJ2_minus.UseVisualStyleBackColor = true;
             this.DJ2_minus.Click += new System.EventHandler(this.DJ2_minus_Click);
             // 
             // DJ2_plus
             // 
-            this.DJ2_plus.Location = new System.Drawing.Point(175, 191);
+            this.DJ2_plus.Location = new System.Drawing.Point(153, 191);
             this.DJ2_plus.Name = "DJ2_plus";
-            this.DJ2_plus.Size = new System.Drawing.Size(32, 23);
+            this.DJ2_plus.Size = new System.Drawing.Size(43, 23);
             this.DJ2_plus.TabIndex = 18;
-            this.DJ2_plus.Text = "+";
+            this.DJ2_plus.Text = "Dół";
             this.DJ2_plus.UseVisualStyleBackColor = true;
             this.DJ2_plus.Click += new System.EventHandler(this.DJ2_plus_Click);
             // 
             // DJ1_minus
             // 
-            this.DJ1_minus.Location = new System.Drawing.Point(226, 220);
+            this.DJ1_minus.Location = new System.Drawing.Point(213, 220);
             this.DJ1_minus.Name = "DJ1_minus";
-            this.DJ1_minus.Size = new System.Drawing.Size(32, 23);
+            this.DJ1_minus.Size = new System.Drawing.Size(45, 23);
             this.DJ1_minus.TabIndex = 17;
-            this.DJ1_minus.Text = "-";
+            this.DJ1_minus.Text = "Góra";
             this.DJ1_minus.UseVisualStyleBackColor = true;
             this.DJ1_minus.Click += new System.EventHandler(this.DJ1_minus_Click);
             // 
             // DJ1_plus
             // 
-            this.DJ1_plus.Location = new System.Drawing.Point(188, 220);
+            this.DJ1_plus.Location = new System.Drawing.Point(164, 220);
             this.DJ1_plus.Name = "DJ1_plus";
-            this.DJ1_plus.Size = new System.Drawing.Size(32, 23);
+            this.DJ1_plus.Size = new System.Drawing.Size(43, 23);
             this.DJ1_plus.TabIndex = 16;
-            this.DJ1_plus.Text = "+";
+            this.DJ1_plus.Text = "Dół";
             this.DJ1_plus.UseVisualStyleBackColor = true;
             this.DJ1_plus.Click += new System.EventHandler(this.DJ1_plus_Click);
             // 
@@ -1097,6 +1098,7 @@
             // tabPage7
             // 
             this.tabPage7.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabPage7.Controls.Add(this.label34);
             this.tabPage7.Controls.Add(this.help_panel);
             this.tabPage7.Controls.Add(this.label32);
             this.tabPage7.Controls.Add(this.help_combo);
@@ -1127,11 +1129,12 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(51, 23);
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label32.Location = new System.Drawing.Point(6, 3);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(115, 13);
+            this.label32.Size = new System.Drawing.Size(63, 20);
             this.label32.TabIndex = 1;
-            this.label32.Text = "Wybierz hasło pomocy";
+            this.label32.Text = "Pomoc";
             // 
             // help_combo
             // 
@@ -1158,12 +1161,21 @@
             "MRA",
             "GC",
             "GO"});
-            this.help_combo.Location = new System.Drawing.Point(49, 55);
+            this.help_combo.Location = new System.Drawing.Point(44, 71);
             this.help_combo.Name = "help_combo";
             this.help_combo.Size = new System.Drawing.Size(121, 21);
             this.help_combo.TabIndex = 0;
             this.help_combo.Text = "<wybierz>";
             this.help_combo.SelectedIndexChanged += new System.EventHandler(this.help_combo_SelectedIndexChanged_1);
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(41, 55);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(115, 13);
+            this.label34.TabIndex = 3;
+            this.label34.Text = "Wybierz hasło pomocy";
             // 
             // Form1
             // 
@@ -1304,6 +1316,7 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label help_text;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
     }
 }
 

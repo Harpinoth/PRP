@@ -30,12 +30,7 @@ namespace PRP_Labo
         public string filename = "plik.txt";    // Filename for connection data saving and reading
         public static double step = 0.1;
         public SerialPort port_lab;
-
-        /* TODO: Consider changing the load and save methods to make them save everything, depending on context - 
-         * TODO: they can be remade so they take in input parameters and just save shit they are told to save 
-         * TODO: into files they are told to save into, also loaders can load what is required from them
-         * TODO: at any time, not only connection data 
-         * TODO: possible solution: make separate load and save methods and appropriate data handling methods */
+        
 
         public void load_parameters()       // Method for loading connection data from file
         {
@@ -50,23 +45,23 @@ namespace PRP_Labo
                 /* Reading data from file */
                 data_port.Invoke(new Action(delegate () {
                     try { data_port.Text = parameters[0]; }
-                    catch { MessageBox.Show("Port name is either missing or corrupted!"); }
+                    catch { MessageBox.Show("Nazwa portu nie istnieje lub dane są uszkodzone!"); }
                 }));               // Port name loading
                 data_baud.Invoke(new Action(delegate () {
                     try { data_baud.Text = parameters[1]; }
-                    catch { MessageBox.Show("Baudrate data is either missing or corrupted!"); }
+                    catch { MessageBox.Show("Dane o prędkości przesyłu nie istnieją lub są uszkodzone!"); }
                 }));           // Baudrate loading
                 data_parity.Invoke(new Action(delegate () {
                     try { data_parity.Text = parameters[2]; }
-                    catch { MessageBox.Show("Parity data is either missing or corrupted!"); }
+                    catch { MessageBox.Show("Dane o parzystości nie istnieją lub są uszkodzone!"); }
                 }));             // Parity loading
                 data_bits.Invoke(new Action(delegate () {
                     try { data_bits.Text = parameters[3]; }
-                    catch { MessageBox.Show("Amount of data bits is either missing or corrupted!"); }
+                    catch { MessageBox.Show("Dane o ilości bitów danych nie istnieją lub są uszkodzone!"); }
                 }));     // Data bits loading
                 data_stopbits.Invoke(new Action(delegate () {
                     try { data_stopbits.Text = parameters[4]; }
-                    catch { MessageBox.Show("Stopbits data is either missing or corrupted!"); }
+                    catch { MessageBox.Show("Dane o ilości bitów stopu nie istnieją lub są uszkodzone!"); }
                 }));           // Stopbits loading
             }
             else MessageBox.Show("File does not exist!");
@@ -87,10 +82,10 @@ namespace PRP_Labo
                 t[4] = data_stopbits.Text;          // Preparing to write stopbits to file
                 File.WriteAllLines(@filepath, t);   // Writing data to file
             }
-            else MessageBox.Show("File does not exist!");
+            else MessageBox.Show("Plik nie istnieje!");
         }
 
-        private SerialPort port_call()
+        private SerialPort port_call()              // Method responsible for initialising port in other methods
         {
             // Connection data conversion to appropriate values and types
             SerialPort port_lab = new SerialPort(data_port.Text);               // Creates port instance with current port name
@@ -101,7 +96,7 @@ namespace PRP_Labo
             if (data_parity.Text == "none" || data_parity.Text == "None") port_lab.Parity = Parity.None;            // Two possible input values in each if, 
             else if (data_parity.Text == "odd" || data_parity.Text == "Odd") port_lab.Parity = Parity.Odd;          // other values will prompt default "none" value
             else if (data_parity.Text == "even" || data_parity.Text == "Even") port_lab.Parity = Parity.Even;
-            else { MessageBox.Show("Wrong parity, setting parity to none!"); port_lab.Parity = Parity.None; }
+            else { MessageBox.Show("Zła parzystość, ustawianie parzystości na domyślną (brak)!"); port_lab.Parity = Parity.None; }
             /* Default parity set to avoid critical errors and their results */
 
             port_lab.DataBits = Convert.ToInt32(data_bits.Text);                // Sets the amount of data bits of port instance to current textbox value
@@ -110,13 +105,13 @@ namespace PRP_Labo
             if (data_stopbits.Text == "one" || data_stopbits.Text == "One") port_lab.StopBits = StopBits.One;               // Two possible input values in each if,
             else if (data_stopbits.Text == "onepointfive" || data_stopbits.Text == "OnePointFive") port_lab.StopBits = StopBits.OnePointFive;
             else if (data_stopbits.Text == "two" || data_stopbits.Text == "Two") port_lab.StopBits = StopBits.Two;          // other values will prompt default "one" value
-            else { MessageBox.Show("Wrong stopbits, setting stopbits to default!"); port_lab.StopBits = StopBits.One; }
+            else { MessageBox.Show("Zła ilość bitów stopu, ustawianie wartości na domyślną (jeden)!"); port_lab.StopBits = StopBits.One; }
             /* Default stopbits set to avoid critical errors and their results */            
 
             return port_lab;
         }
 
-        private void port_starting(SerialPort port_lab)
+        private void port_starting(SerialPort port_lab)         // Method responsible for opening port in other methods
         {
             try
             {
@@ -147,40 +142,41 @@ namespace PRP_Labo
             save_parameters();     // Save current connection data to file
         }
 
-        private void connect_Click(object sender, EventArgs e)
+        private void connect_Click(object sender, EventArgs e)          // Reaction to clicking connect button
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
             port_lab.Close();
         }
 
-        private void WH_button_Click(object sender, EventArgs e)
+        private void WH_button_Click(object sender, EventArgs e)                        // Acquisition of current position of manipulator
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
             port_lab.Write(String.Format("WH"+"\r"));
-            Thread.Sleep(750);
+            Thread.Sleep(750);                                                          // Synchronising delay
             pointter = port_lab.ReadExisting();
-            WH_text.Invoke(new Action(delegate () { WH_text.Text = pointter; }));
-            point_maker(pointter);
+            WH_text.Invoke(new Action(delegate () { WH_text.Text = pointter; }));       // Writing data into debugging textbox
+            point_maker(pointter);                                                      // Dividing data into separate textboxes
             port_lab.Close();
         }  
         
-        private void point_maker(string wuha)
+        private void point_maker(string wuha)               // Method responsible for dividing data received from manipulator into separate textboxes
         {
             points = new string[10];
             int j = 0;
             string worker = wuha.TrimEnd(new char[] {'\n', '\r', ' '});
             for (int i=0; i<worker.Length; i++)
             {
-                if (worker[i] == ',') j++;
-                else if (worker[i] == ' ') ;
+                if (worker[i] == ',') j++;                  // Using data separator to tell difference between different parameters
+                else if (worker[i] == ' ') ;                // Ignoring spaces
                 else
                 {
                     if (String.IsNullOrEmpty(points[j])) points[j] += worker[i].ToString();
                     else points[j] = String.Concat(points[j],worker[i].ToString()); ;
                 } 
             }
+            // Setting proper textboxes
             x_pos.Invoke(new Action(delegate () { x_pos.ResetText(); x_pos.Text = points[0];  }));
             y_pos.Invoke(new Action(delegate () { y_pos.ResetText();  y_pos.Text = points[1]; }));
             z_pos.Invoke(new Action(delegate () { z_pos.ResetText();  z_pos.Text = points[2]; }));
@@ -191,27 +187,43 @@ namespace PRP_Labo
             R_pos.Invoke(new Action(delegate () { R_pos.ResetText();  R_pos.Text = points[7]; }));
             A_pos.Invoke(new Action(delegate () { A_pos.ResetText();  A_pos.Text = points[8]; }));
             C_pos.Invoke(new Action(delegate () { C_pos.ResetText();  C_pos.Text = points[9]; }));
-        }      
+        }
+
+        private void point_listadder_Click(object sender, EventArgs e)          // Method responsible for adding points to list
+        {
+            point_list.Text += x_pos.Text + " ; " + y_pos.Text + " ; " + z_pos.Text + " ; " + angle1_pos.Text + " ; " + angle2_pos.Text + " ; " + L1_pos.Text + " ; " + R_pos.Text + " ; " + A_pos.Text + " ; " + C_pos.Text + crlf;
+        }
+
+        private void change_Click(object sender, EventArgs e)                   // Method responsible for changing position to one specified in textboxes in "Pozycje" tab
+        {
+            SerialPort port_lab = port_call();
+            port_starting(port_lab);
+            Thread.Sleep(750);
+            String wysylka = String.Format("MP " + x_pos.Text + "," + y_pos.Text + "," + z_pos.Text + "," + angle1_pos.Text + "," + angle2_pos.Text + "," + L1_pos.Text + "," + L2_pos.Text + "," + R_pos.Text + "," + A_pos.Text + "\r");
+            port_lab.Write(wysylka);
+            Console.Write(BitConverter.ToString(Encoding.Default.GetBytes(C_pos.Text)));
+            port_lab.Close();
+        }
 
         private void tabPage3_Enter(object sender, EventArgs e)
         {           
             
         }
 
-        private void add_command_Click(object sender, EventArgs e)
+        private void add_command_Click(object sender, EventArgs e)                  // Method responsible for adding new command to macro
         {            
                 makro_text.Text += linenumber + " " + text_command.Text + crlf;
                 makro_list[(linenumber-1)/10] = text_command.Text;
                 linenumber += 10;               
         }
 
-        private void makro_reset_Click(object sender, EventArgs e)
+        private void makro_reset_Click(object sender, EventArgs e)                  // Method responsible for resetting macro
         {
             makro_text.ResetText();
             makro_list = new string[1001];
         }
 
-        private void send_single_command_Click(object sender, EventArgs e)
+        private void send_single_command_Click(object sender, EventArgs e)          // Method responsible for sending one command
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
@@ -220,7 +232,7 @@ namespace PRP_Labo
             port_lab.Close();
         }
 
-        private void send_command_Click(object sender, EventArgs e)
+        private void send_command_Click(object sender, EventArgs e)                 // Method responsible for sending macro
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
@@ -233,23 +245,28 @@ namespace PRP_Labo
             port_lab.Write(String.Format("ED" + "\r"));
             port_lab.Close();        }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)       // Reaction at closing app, purpose: safety
         {
             SerialPort port_lab = port_call();
             if(port_lab.IsOpen)  port_lab.Close();
         }
 
-        private void step_scroll_Scroll(object sender, EventArgs e)
+        private void step_scroll_Scroll(object sender, EventArgs e)                 // Method responsible for setting move step in manual mode
         {
                   step_text.Text = Convert.ToString((float)step_scroll.Value / 10);
         }
 
-        private void speed_scroll_Scroll(object sender, EventArgs e)
+        private void speed_scroll_Scroll(object sender, EventArgs e)                // Method responsible for setting move speed in manual mode
         {
                   speed_text.Text = Convert.ToString(speed_scroll.Value);
         }
 
-        private void confirm_Click(object sender, EventArgs e)
+        private void override_scroll_Scroll_1(object sender, EventArgs e)           // Method responsible for setting override in manual mode
+        {
+            override_text.Text = Convert.ToString(override_scroll.Value);
+        }
+
+        private void confirm_Click(object sender, EventArgs e)                      // Method responsible for confirming step, speed and override values
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
@@ -270,6 +287,7 @@ namespace PRP_Labo
             port_lab.Write(String.Format("OVR " + override_text.Text + "\r"));
             port_lab.Close();
         }
+        /* START OF SERIES OF REACTIONS TO ACTIONS MADE IN MANUAL MODE */
 
         private void DJ1_plus_Click(object sender, EventArgs e)
         {
@@ -399,28 +417,9 @@ namespace PRP_Labo
             port_lab.Close();
         }
 
-        private void point_listadder_Click(object sender, EventArgs e)
-        {
-            point_list.Text += x_pos.Text + " ; " + y_pos.Text + " ; " + z_pos.Text + " ; " + angle1_pos.Text + " ; " + angle2_pos.Text + " ; " + L1_pos.Text + " ; " + R_pos.Text + " ; " + A_pos.Text + " ; " + C_pos.Text + crlf;
-        }
+        /* END OF SERIES OF REACTIONS TO ACTIONS MADE IN MANUAL MODE */
 
-        private void override_scroll_Scroll_1(object sender, EventArgs e)
-        {
-            override_text.Text = Convert.ToString(override_scroll.Value);
-        }
-
-        private void change_Click(object sender, EventArgs e)
-        {
-            SerialPort port_lab = port_call();
-            port_starting(port_lab);
-            Thread.Sleep(750);
-            String wysylka = String.Format("MP " + x_pos.Text + "," + y_pos.Text + "," + z_pos.Text + "," + angle1_pos.Text + "," + angle2_pos.Text + "," + L1_pos.Text + "," + L2_pos.Text + "," + R_pos.Text + "," + A_pos.Text + "\r");
-            port_lab.Write(wysylka);
-            Console.Write(BitConverter.ToString(Encoding.Default.GetBytes(C_pos.Text)));
-            port_lab.Close();
-        }
-
-        private void help_combo_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void help_combo_SelectedIndexChanged_1(object sender, EventArgs e)              // Reaction to choosing any help item in "Pomoc" tab
         {
             switch (help_combo.Text)
             {
