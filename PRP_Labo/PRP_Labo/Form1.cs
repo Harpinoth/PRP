@@ -27,7 +27,8 @@ namespace PRP_Labo
         public string step2;
         public string[] makro_list = new string[1001];
         public string[] points = new string[10];
-        public string filename = "plik.txt";    // Filename for connection data saving and reading
+        public string filename_port = "plik.txt";           // Filename for connection data saving and reading
+        public string filename_macro = "makro.txt";         // Filename for macro saving and reading
         public static double step = 0.1;
         public SerialPort port_lab;
         
@@ -36,7 +37,7 @@ namespace PRP_Labo
         {
 
             string filepath;
-            filepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + filename; // Universal pathname config
+            filepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + filename_port; // Universal pathname config
             //MessageBox.Show(filepath);    // Testing/debugging purposes
 
             if (File.Exists(@filepath))
@@ -70,7 +71,7 @@ namespace PRP_Labo
         {
             // Saving data
             string filepath;
-            filepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + filename; // Universal pathname config
+            filepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + filename_port; // Universal pathname config
             /*  */
             if (File.Exists(@filepath))
             {
@@ -230,6 +231,42 @@ namespace PRP_Labo
             Thread.Sleep(500);
             port_lab.Write(String.Format(text_command.Text + "\r"));
             port_lab.Close();
+        }
+
+        private void save_macro_Click(object sender, EventArgs e)                   // Method responsible for saving macro command to file
+        {
+            string filepath;
+            filepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + filename_macro;
+            if (File.Exists(@filepath))
+            {
+                string[] t = new string[makro_list.Count()];
+                t = makro_list;
+                File.WriteAllLines(@filepath, t);
+
+            }
+            else MessageBox.Show("Plik nie istnieje!");
+
+        }
+
+        private void load_macro_Click(object sender, EventArgs e)                   // Macro responsible for loading macro from to file
+        {
+            string filepath;
+            filepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + filename_macro;
+            if (File.Exists(@filepath))
+            {
+                string[] t = new string[File.ReadLines(@filepath).Count()];
+                t = File.ReadAllLines(@filepath);
+                makro_text.ResetText();
+                makro_list = new string[1001];
+                makro_list = t;
+                for(int i = 0; i<File.ReadLines(@filepath).Count(); i++)
+                {
+                    if (String.IsNullOrEmpty(makro_list[i])) break;
+                    makro_text.Text += (10 * (i+1)) + " " + String.Format(makro_list[i]) + crlf;
+                }
+
+            }
+            else MessageBox.Show("Plik nie istnieje!");
         }
 
         private void send_command_Click(object sender, EventArgs e)                 // Method responsible for sending macro
@@ -488,5 +525,7 @@ namespace PRP_Labo
                     break;
             }
         }
+
+        
     }
 }

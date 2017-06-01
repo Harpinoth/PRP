@@ -74,6 +74,8 @@
             this.WH_button = new System.Windows.Forms.Button();
             this.WH_text = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.load_macro = new System.Windows.Forms.Button();
+            this.save_macro = new System.Windows.Forms.Button();
             this.send_single_command = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.makro_text = new System.Windows.Forms.Label();
@@ -123,11 +125,11 @@
             this.x_plus = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.label34 = new System.Windows.Forms.Label();
             this.help_panel = new System.Windows.Forms.Panel();
             this.help_text = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.help_combo = new System.Windows.Forms.ComboBox();
-            this.label34 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -574,10 +576,13 @@
             this.WH_text.Name = "WH_text";
             this.WH_text.Size = new System.Drawing.Size(356, 20);
             this.WH_text.TabIndex = 0;
+            this.WH_text.Visible = false;
             // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabPage3.Controls.Add(this.load_macro);
+            this.tabPage3.Controls.Add(this.save_macro);
             this.tabPage3.Controls.Add(this.send_single_command);
             this.tabPage3.Controls.Add(this.panel1);
             this.tabPage3.Controls.Add(this.label8);
@@ -592,6 +597,26 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Makro";
             this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
+            // 
+            // load_macro
+            // 
+            this.load_macro.Location = new System.Drawing.Point(132, 139);
+            this.load_macro.Name = "load_macro";
+            this.load_macro.Size = new System.Drawing.Size(54, 32);
+            this.load_macro.TabIndex = 10;
+            this.load_macro.Text = "Wczytaj";
+            this.load_macro.UseVisualStyleBackColor = true;
+            this.load_macro.Click += new System.EventHandler(this.load_macro_Click);
+            // 
+            // save_macro
+            // 
+            this.save_macro.Location = new System.Drawing.Point(65, 139);
+            this.save_macro.Name = "save_macro";
+            this.save_macro.Size = new System.Drawing.Size(54, 32);
+            this.save_macro.TabIndex = 9;
+            this.save_macro.Text = "Zapisz";
+            this.save_macro.UseVisualStyleBackColor = true;
+            this.save_macro.Click += new System.EventHandler(this.save_macro_Click);
             // 
             // send_single_command
             // 
@@ -1109,6 +1134,15 @@
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Pomoc";
             // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(41, 55);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(115, 13);
+            this.label34.TabIndex = 3;
+            this.label34.Text = "Wybierz hasło pomocy";
+            // 
             // help_panel
             // 
             this.help_panel.AutoScroll = true;
@@ -1167,15 +1201,6 @@
             this.help_combo.TabIndex = 0;
             this.help_combo.Text = "<wybierz>";
             this.help_combo.SelectedIndexChanged += new System.EventHandler(this.help_combo_SelectedIndexChanged_1);
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(41, 55);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(115, 13);
-            this.label34.TabIndex = 3;
-            this.label34.Text = "Wybierz hasło pomocy";
             // 
             // Form1
             // 
@@ -1317,6 +1342,8 @@
         private System.Windows.Forms.Label help_text;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Button load_macro;
+        private System.Windows.Forms.Button save_macro;
     }
 }
 
