@@ -77,6 +77,7 @@
             this.WH_button = new System.Windows.Forms.Button();
             this.WH_text = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.edit_macro = new System.Windows.Forms.Button();
             this.load_macro = new System.Windows.Forms.Button();
             this.save_macro = new System.Windows.Forms.Button();
             this.send_single_command = new System.Windows.Forms.Button();
@@ -145,7 +146,6 @@
             this.help_text = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.help_combo = new System.Windows.Forms.ComboBox();
-            this.edit_macro = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -655,9 +655,19 @@
             this.tabPage3.Text = "Program";
             this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
             // 
+            // edit_macro
+            // 
+            this.edit_macro.Location = new System.Drawing.Point(65, 139);
+            this.edit_macro.Name = "edit_macro";
+            this.edit_macro.Size = new System.Drawing.Size(121, 23);
+            this.edit_macro.TabIndex = 11;
+            this.edit_macro.Text = "Edytuj program";
+            this.edit_macro.UseVisualStyleBackColor = true;
+            this.edit_macro.Click += new System.EventHandler(this.edit_macro_Click);
+            // 
             // load_macro
             // 
-            this.load_macro.Location = new System.Drawing.Point(132, 139);
+            this.load_macro.Location = new System.Drawing.Point(132, 168);
             this.load_macro.Name = "load_macro";
             this.load_macro.Size = new System.Drawing.Size(54, 32);
             this.load_macro.TabIndex = 10;
@@ -667,7 +677,7 @@
             // 
             // save_macro
             // 
-            this.save_macro.Location = new System.Drawing.Point(65, 139);
+            this.save_macro.Location = new System.Drawing.Point(65, 168);
             this.save_macro.Name = "save_macro";
             this.save_macro.Size = new System.Drawing.Size(54, 32);
             this.save_macro.TabIndex = 9;
@@ -1384,16 +1394,6 @@
             this.help_combo.TabIndex = 0;
             this.help_combo.Text = "<wybierz>";
             this.help_combo.SelectedIndexChanged += new System.EventHandler(this.help_combo_SelectedIndexChanged_1);
-            // 
-            // edit_macro
-            // 
-            this.edit_macro.Location = new System.Drawing.Point(65, 177);
-            this.edit_macro.Name = "edit_macro";
-            this.edit_macro.Size = new System.Drawing.Size(121, 23);
-            this.edit_macro.TabIndex = 11;
-            this.edit_macro.Text = "Edytuj program";
-            this.edit_macro.UseVisualStyleBackColor = true;
-            this.edit_macro.Click += new System.EventHandler(this.edit_macro_Click);
             // 
             // Form1
             // 
