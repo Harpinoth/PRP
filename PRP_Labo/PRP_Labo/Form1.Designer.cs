@@ -30,6 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.stopbits_combo = new System.Windows.Forms.ComboBox();
+            this.parity_combo = new System.Windows.Forms.ComboBox();
+            this.porty_combo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.connect = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
@@ -103,6 +106,12 @@
             this.label25 = new System.Windows.Forms.Label();
             this.step_scroll = new System.Windows.Forms.TrackBar();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.confirm2 = new System.Windows.Forms.Button();
+            this.step_text2 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.step_scroll2 = new System.Windows.Forms.TrackBar();
             this.label26 = new System.Windows.Forms.Label();
             this.DJ5_minus = new System.Windows.Forms.Button();
             this.DJ5_plus = new System.Windows.Forms.Button();
@@ -116,6 +125,12 @@
             this.DJ1_plus = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.confirm3 = new System.Windows.Forms.Button();
+            this.step_text3 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.step_scroll3 = new System.Windows.Forms.TrackBar();
             this.label27 = new System.Windows.Forms.Label();
             this.z_minus = new System.Windows.Forms.Button();
             this.z_plus = new System.Windows.Forms.Button();
@@ -130,6 +145,7 @@
             this.help_text = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.help_combo = new System.Windows.Forms.ComboBox();
+            this.edit_macro = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -141,8 +157,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.speed_scroll)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.step_scroll)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.step_scroll2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.step_scroll3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage7.SuspendLayout();
             this.help_panel.SuspendLayout();
@@ -166,6 +184,9 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabPage1.Controls.Add(this.stopbits_combo);
+            this.tabPage1.Controls.Add(this.parity_combo);
+            this.tabPage1.Controls.Add(this.porty_combo);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.connect);
             this.tabPage1.Controls.Add(this.save);
@@ -186,6 +207,41 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Połączenie";
             this.tabPage1.Enter += new System.EventHandler(this.tabPage1_Enter);
+            // 
+            // stopbits_combo
+            // 
+            this.stopbits_combo.FormattingEnabled = true;
+            this.stopbits_combo.Items.AddRange(new object[] {
+            "One",
+            "OnePointFive",
+            "Two"});
+            this.stopbits_combo.Location = new System.Drawing.Point(172, 174);
+            this.stopbits_combo.Name = "stopbits_combo";
+            this.stopbits_combo.Size = new System.Drawing.Size(109, 21);
+            this.stopbits_combo.TabIndex = 17;
+            this.stopbits_combo.SelectedIndexChanged += new System.EventHandler(this.stopbits_combo_SelectedIndexChanged);
+            // 
+            // parity_combo
+            // 
+            this.parity_combo.FormattingEnabled = true;
+            this.parity_combo.Items.AddRange(new object[] {
+            "none",
+            "odd",
+            "even"});
+            this.parity_combo.Location = new System.Drawing.Point(172, 123);
+            this.parity_combo.Name = "parity_combo";
+            this.parity_combo.Size = new System.Drawing.Size(109, 21);
+            this.parity_combo.TabIndex = 16;
+            this.parity_combo.SelectedIndexChanged += new System.EventHandler(this.parity_combo_SelectedIndexChanged);
+            // 
+            // porty_combo
+            // 
+            this.porty_combo.FormattingEnabled = true;
+            this.porty_combo.Location = new System.Drawing.Point(172, 71);
+            this.porty_combo.Name = "porty_combo";
+            this.porty_combo.Size = new System.Drawing.Size(109, 21);
+            this.porty_combo.TabIndex = 15;
+            this.porty_combo.SelectedIndexChanged += new System.EventHandler(this.porty_combo_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -219,14 +275,14 @@
             // 
             // data_stopbits
             // 
-            this.data_stopbits.Location = new System.Drawing.Point(232, 172);
+            this.data_stopbits.Location = new System.Drawing.Point(298, 177);
             this.data_stopbits.Name = "data_stopbits";
             this.data_stopbits.Size = new System.Drawing.Size(171, 20);
             this.data_stopbits.TabIndex = 11;
             // 
             // data_parity
             // 
-            this.data_parity.Location = new System.Drawing.Point(232, 119);
+            this.data_parity.Location = new System.Drawing.Point(298, 124);
             this.data_parity.Name = "data_parity";
             this.data_parity.Size = new System.Drawing.Size(171, 20);
             this.data_parity.TabIndex = 10;
@@ -234,7 +290,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(134, 175);
+            this.label5.Location = new System.Drawing.Point(75, 177);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 9;
@@ -243,7 +299,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(134, 149);
+            this.label4.Location = new System.Drawing.Point(75, 151);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 8;
@@ -252,7 +308,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(134, 122);
+            this.label3.Location = new System.Drawing.Point(75, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 7;
@@ -261,7 +317,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(134, 96);
+            this.label2.Location = new System.Drawing.Point(75, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 13);
             this.label2.TabIndex = 6;
@@ -270,7 +326,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(134, 70);
+            this.label1.Location = new System.Drawing.Point(75, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(26, 13);
             this.label1.TabIndex = 5;
@@ -278,21 +334,21 @@
             // 
             // data_bits
             // 
-            this.data_bits.Location = new System.Drawing.Point(233, 146);
+            this.data_bits.Location = new System.Drawing.Point(299, 151);
             this.data_bits.Name = "data_bits";
             this.data_bits.Size = new System.Drawing.Size(171, 20);
             this.data_bits.TabIndex = 2;
             // 
             // data_baud
             // 
-            this.data_baud.Location = new System.Drawing.Point(232, 93);
+            this.data_baud.Location = new System.Drawing.Point(298, 98);
             this.data_baud.Name = "data_baud";
             this.data_baud.Size = new System.Drawing.Size(171, 20);
             this.data_baud.TabIndex = 1;
             // 
             // data_port
             // 
-            this.data_port.Location = new System.Drawing.Point(232, 67);
+            this.data_port.Location = new System.Drawing.Point(298, 72);
             this.data_port.Name = "data_port";
             this.data_port.Size = new System.Drawing.Size(171, 20);
             this.data_port.TabIndex = 0;
@@ -389,9 +445,9 @@
             // 
             // change
             // 
-            this.change.Location = new System.Drawing.Point(378, 86);
+            this.change.Location = new System.Drawing.Point(334, 79);
             this.change.Name = "change";
-            this.change.Size = new System.Drawing.Size(60, 23);
+            this.change.Size = new System.Drawing.Size(136, 42);
             this.change.TabIndex = 22;
             this.change.Text = "Zmień";
             this.change.UseVisualStyleBackColor = true;
@@ -562,9 +618,9 @@
             // 
             // WH_button
             // 
-            this.WH_button.Location = new System.Drawing.Point(378, 56);
+            this.WH_button.Location = new System.Drawing.Point(334, 34);
             this.WH_button.Name = "WH_button";
-            this.WH_button.Size = new System.Drawing.Size(60, 21);
+            this.WH_button.Size = new System.Drawing.Size(136, 43);
             this.WH_button.TabIndex = 1;
             this.WH_button.Text = "Gdzie?";
             this.WH_button.UseVisualStyleBackColor = true;
@@ -581,6 +637,7 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabPage3.Controls.Add(this.edit_macro);
             this.tabPage3.Controls.Add(this.load_macro);
             this.tabPage3.Controls.Add(this.save_macro);
             this.tabPage3.Controls.Add(this.send_single_command);
@@ -595,7 +652,7 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(549, 279);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Makro";
+            this.tabPage3.Text = "Program";
             this.tabPage3.Enter += new System.EventHandler(this.tabPage3_Enter);
             // 
             // load_macro
@@ -658,21 +715,21 @@
             // 
             // makro_reset
             // 
-            this.makro_reset.Location = new System.Drawing.Point(65, 206);
+            this.makro_reset.Location = new System.Drawing.Point(65, 235);
             this.makro_reset.Name = "makro_reset";
             this.makro_reset.Size = new System.Drawing.Size(121, 23);
             this.makro_reset.TabIndex = 5;
-            this.makro_reset.Text = "Resetuj makro";
+            this.makro_reset.Text = "Resetuj program";
             this.makro_reset.UseVisualStyleBackColor = true;
             this.makro_reset.Click += new System.EventHandler(this.makro_reset_Click);
             // 
             // send_command
             // 
-            this.send_command.Location = new System.Drawing.Point(65, 177);
+            this.send_command.Location = new System.Drawing.Point(65, 206);
             this.send_command.Name = "send_command";
             this.send_command.Size = new System.Drawing.Size(121, 23);
             this.send_command.TabIndex = 4;
-            this.send_command.Text = "Wyślij makro";
+            this.send_command.Text = "Wyślij program";
             this.send_command.UseVisualStyleBackColor = true;
             this.send_command.Click += new System.EventHandler(this.send_command_Click);
             // 
@@ -884,6 +941,12 @@
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabPage5.Controls.Add(this.confirm2);
+            this.tabPage5.Controls.Add(this.step_text2);
+            this.tabPage5.Controls.Add(this.label36);
+            this.tabPage5.Controls.Add(this.label37);
+            this.tabPage5.Controls.Add(this.label38);
+            this.tabPage5.Controls.Add(this.step_scroll2);
             this.tabPage5.Controls.Add(this.label26);
             this.tabPage5.Controls.Add(this.DJ5_minus);
             this.tabPage5.Controls.Add(this.DJ5_plus);
@@ -903,6 +966,63 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Ręczne";
             // 
+            // confirm2
+            // 
+            this.confirm2.Location = new System.Drawing.Point(67, 176);
+            this.confirm2.Name = "confirm2";
+            this.confirm2.Size = new System.Drawing.Size(86, 33);
+            this.confirm2.TabIndex = 39;
+            this.confirm2.Text = "potwierdź";
+            this.confirm2.UseVisualStyleBackColor = true;
+            this.confirm2.Click += new System.EventHandler(this.confirm2_Click);
+            // 
+            // step_text2
+            // 
+            this.step_text2.AutoSize = true;
+            this.step_text2.Location = new System.Drawing.Point(123, 91);
+            this.step_text2.Name = "step_text2";
+            this.step_text2.Size = new System.Drawing.Size(22, 13);
+            this.step_text2.TabIndex = 38;
+            this.step_text2.Text = "0.1";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(177, 127);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(19, 13);
+            this.label36.TabIndex = 37;
+            this.label36.Text = "10";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(39, 127);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(22, 13);
+            this.label37.TabIndex = 36;
+            this.label37.Text = "0.1";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(85, 91);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(32, 13);
+            this.label38.TabIndex = 35;
+            this.label38.Text = "Krok:";
+            // 
+            // step_scroll2
+            // 
+            this.step_scroll2.Location = new System.Drawing.Point(67, 116);
+            this.step_scroll2.Maximum = 100;
+            this.step_scroll2.Minimum = 1;
+            this.step_scroll2.Name = "step_scroll2";
+            this.step_scroll2.Size = new System.Drawing.Size(104, 45);
+            this.step_scroll2.TabIndex = 34;
+            this.step_scroll2.Value = 1;
+            this.step_scroll2.Scroll += new System.EventHandler(this.step_scroll2_Scroll);
+            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -915,7 +1035,7 @@
             // 
             // DJ5_minus
             // 
-            this.DJ5_minus.Location = new System.Drawing.Point(188, 142);
+            this.DJ5_minus.Location = new System.Drawing.Point(286, 138);
             this.DJ5_minus.Name = "DJ5_minus";
             this.DJ5_minus.Size = new System.Drawing.Size(41, 23);
             this.DJ5_minus.TabIndex = 30;
@@ -925,7 +1045,7 @@
             // 
             // DJ5_plus
             // 
-            this.DJ5_plus.Location = new System.Drawing.Point(139, 142);
+            this.DJ5_plus.Location = new System.Drawing.Point(237, 138);
             this.DJ5_plus.Name = "DJ5_plus";
             this.DJ5_plus.Size = new System.Drawing.Size(43, 23);
             this.DJ5_plus.TabIndex = 29;
@@ -935,7 +1055,7 @@
             // 
             // DJ4_minus
             // 
-            this.DJ4_minus.Location = new System.Drawing.Point(226, 38);
+            this.DJ4_minus.Location = new System.Drawing.Point(324, 36);
             this.DJ4_minus.Name = "DJ4_minus";
             this.DJ4_minus.Size = new System.Drawing.Size(48, 23);
             this.DJ4_minus.TabIndex = 27;
@@ -945,7 +1065,7 @@
             // 
             // DJ4_plus
             // 
-            this.DJ4_plus.Location = new System.Drawing.Point(175, 38);
+            this.DJ4_plus.Location = new System.Drawing.Point(273, 36);
             this.DJ4_plus.Name = "DJ4_plus";
             this.DJ4_plus.Size = new System.Drawing.Size(45, 23);
             this.DJ4_plus.TabIndex = 26;
@@ -955,7 +1075,7 @@
             // 
             // DJ3_minus
             // 
-            this.DJ3_minus.Location = new System.Drawing.Point(354, 38);
+            this.DJ3_minus.Location = new System.Drawing.Point(452, 43);
             this.DJ3_minus.Name = "DJ3_minus";
             this.DJ3_minus.Size = new System.Drawing.Size(42, 23);
             this.DJ3_minus.TabIndex = 24;
@@ -965,7 +1085,7 @@
             // 
             // DJ3_plus
             // 
-            this.DJ3_plus.Location = new System.Drawing.Point(304, 38);
+            this.DJ3_plus.Location = new System.Drawing.Point(402, 43);
             this.DJ3_plus.Name = "DJ3_plus";
             this.DJ3_plus.Size = new System.Drawing.Size(44, 23);
             this.DJ3_plus.TabIndex = 23;
@@ -975,7 +1095,7 @@
             // 
             // DJ2_minus
             // 
-            this.DJ2_minus.Location = new System.Drawing.Point(202, 191);
+            this.DJ2_minus.Location = new System.Drawing.Point(300, 186);
             this.DJ2_minus.Name = "DJ2_minus";
             this.DJ2_minus.Size = new System.Drawing.Size(43, 23);
             this.DJ2_minus.TabIndex = 19;
@@ -985,7 +1105,7 @@
             // 
             // DJ2_plus
             // 
-            this.DJ2_plus.Location = new System.Drawing.Point(153, 191);
+            this.DJ2_plus.Location = new System.Drawing.Point(251, 186);
             this.DJ2_plus.Name = "DJ2_plus";
             this.DJ2_plus.Size = new System.Drawing.Size(43, 23);
             this.DJ2_plus.TabIndex = 18;
@@ -995,7 +1115,7 @@
             // 
             // DJ1_minus
             // 
-            this.DJ1_minus.Location = new System.Drawing.Point(213, 220);
+            this.DJ1_minus.Location = new System.Drawing.Point(311, 225);
             this.DJ1_minus.Name = "DJ1_minus";
             this.DJ1_minus.Size = new System.Drawing.Size(45, 23);
             this.DJ1_minus.TabIndex = 17;
@@ -1005,7 +1125,7 @@
             // 
             // DJ1_plus
             // 
-            this.DJ1_plus.Location = new System.Drawing.Point(164, 220);
+            this.DJ1_plus.Location = new System.Drawing.Point(262, 225);
             this.DJ1_plus.Name = "DJ1_plus";
             this.DJ1_plus.Size = new System.Drawing.Size(43, 23);
             this.DJ1_plus.TabIndex = 16;
@@ -1016,16 +1136,22 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PRP_Labo.Properties.Resources.robot_proj;
-            this.pictureBox1.Location = new System.Drawing.Point(-15, 36);
+            this.pictureBox1.Location = new System.Drawing.Point(82, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(577, 247);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabPage6.Controls.Add(this.confirm3);
+            this.tabPage6.Controls.Add(this.step_text3);
+            this.tabPage6.Controls.Add(this.label40);
+            this.tabPage6.Controls.Add(this.label41);
+            this.tabPage6.Controls.Add(this.label42);
+            this.tabPage6.Controls.Add(this.step_scroll3);
             this.tabPage6.Controls.Add(this.label27);
             this.tabPage6.Controls.Add(this.z_minus);
             this.tabPage6.Controls.Add(this.z_plus);
@@ -1040,6 +1166,63 @@
             this.tabPage6.Size = new System.Drawing.Size(549, 279);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "XYZ";
+            // 
+            // confirm3
+            // 
+            this.confirm3.Location = new System.Drawing.Point(405, 165);
+            this.confirm3.Name = "confirm3";
+            this.confirm3.Size = new System.Drawing.Size(86, 33);
+            this.confirm3.TabIndex = 31;
+            this.confirm3.Text = "potwierdź";
+            this.confirm3.UseVisualStyleBackColor = true;
+            this.confirm3.Click += new System.EventHandler(this.confirm3_Click);
+            // 
+            // step_text3
+            // 
+            this.step_text3.AutoSize = true;
+            this.step_text3.Location = new System.Drawing.Point(461, 80);
+            this.step_text3.Name = "step_text3";
+            this.step_text3.Size = new System.Drawing.Size(22, 13);
+            this.step_text3.TabIndex = 29;
+            this.step_text3.Text = "0.1";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(515, 116);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(19, 13);
+            this.label40.TabIndex = 28;
+            this.label40.Text = "10";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(377, 116);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(22, 13);
+            this.label41.TabIndex = 27;
+            this.label41.Text = "0.1";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(423, 80);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(32, 13);
+            this.label42.TabIndex = 26;
+            this.label42.Text = "Krok:";
+            // 
+            // step_scroll3
+            // 
+            this.step_scroll3.Location = new System.Drawing.Point(405, 105);
+            this.step_scroll3.Maximum = 100;
+            this.step_scroll3.Minimum = 1;
+            this.step_scroll3.Name = "step_scroll3";
+            this.step_scroll3.Size = new System.Drawing.Size(104, 45);
+            this.step_scroll3.TabIndex = 25;
+            this.step_scroll3.Value = 1;
+            this.step_scroll3.Scroll += new System.EventHandler(this.step_scroll3_Scroll);
             // 
             // label27
             // 
@@ -1202,6 +1385,16 @@
             this.help_combo.Text = "<wybierz>";
             this.help_combo.SelectedIndexChanged += new System.EventHandler(this.help_combo_SelectedIndexChanged_1);
             // 
+            // edit_macro
+            // 
+            this.edit_macro.Location = new System.Drawing.Point(65, 177);
+            this.edit_macro.Name = "edit_macro";
+            this.edit_macro.Size = new System.Drawing.Size(121, 23);
+            this.edit_macro.TabIndex = 11;
+            this.edit_macro.Text = "Edytuj program";
+            this.edit_macro.UseVisualStyleBackColor = true;
+            this.edit_macro.Click += new System.EventHandler(this.edit_macro_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1211,6 +1404,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1229,8 +1423,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.step_scroll)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.step_scroll2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.step_scroll3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
@@ -1313,7 +1510,6 @@
         private System.Windows.Forms.Button DJ2_plus;
         private System.Windows.Forms.Button DJ1_minus;
         private System.Windows.Forms.Button DJ1_plus;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Button y_minus;
         private System.Windows.Forms.Button y_plus;
@@ -1344,6 +1540,23 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Button load_macro;
         private System.Windows.Forms.Button save_macro;
+        private System.Windows.Forms.ComboBox stopbits_combo;
+        private System.Windows.Forms.ComboBox parity_combo;
+        private System.Windows.Forms.ComboBox porty_combo;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label step_text2;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TrackBar step_scroll2;
+        private System.Windows.Forms.Button confirm2;
+        private System.Windows.Forms.Button confirm3;
+        private System.Windows.Forms.Label step_text3;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TrackBar step_scroll3;
+        private System.Windows.Forms.Button edit_macro;
     }
 }
 

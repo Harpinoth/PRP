@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.IO.Ports;
 using System.Threading;
+using System.Diagnostics;
 
 namespace PRP_Labo
 {
@@ -20,7 +21,8 @@ namespace PRP_Labo
             InitializeComponent();
 
         }
-         
+
+        public static string[] myPort = System.IO.Ports.SerialPort.GetPortNames();
         string crlf = Convert.ToString(Convert.ToChar(13)) + Convert.ToString(Convert.ToChar(10));
         int linenumber = 10;
         public string pointter;
@@ -28,7 +30,7 @@ namespace PRP_Labo
         public string[] makro_list = new string[1001];
         public string[] points = new string[10];
         public string filename_port = "plik.txt";           // Filename for connection data saving and reading
-        public string filename_macro = "makro.txt";         // Filename for macro saving and reading
+        public string filename_macro = "program.txt";         // Filename for macro saving and reading
         public static double step = 0.1;
         public SerialPort port_lab;
         
@@ -269,6 +271,13 @@ namespace PRP_Labo
             else MessageBox.Show("Plik nie istnieje!");
         }
 
+        private void edit_macro_Click(object sender, EventArgs e)
+        {
+            string filepath;
+            filepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + filename_macro;
+            Process.Start("notepad.exe", filepath);
+        }
+
         private void send_command_Click(object sender, EventArgs e)                 // Method responsible for sending macro
         {
             SerialPort port_lab = port_call();
@@ -284,13 +293,16 @@ namespace PRP_Labo
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)       // Reaction at closing app, purpose: safety
         {
-            SerialPort port_lab = port_call();
-            if(port_lab.IsOpen)  port_lab.Close();
+            
         }
 
         private void step_scroll_Scroll(object sender, EventArgs e)                 // Method responsible for setting move step in manual mode
         {
-                  step_text.Text = Convert.ToString((float)step_scroll.Value / 10);
+                step_text.Text = Convert.ToString((float)step_scroll.Value / 10);
+                step_text2.Text = Convert.ToString((float)step_scroll.Value / 10);
+                step_text3.Text = Convert.ToString((float)step_scroll.Value / 10);
+                step_scroll2.Value = step_scroll.Value;
+                step_scroll3.Value = step_scroll.Value;
         }
 
         private void speed_scroll_Scroll(object sender, EventArgs e)                // Method responsible for setting move speed in manual mode
@@ -524,6 +536,92 @@ namespace PRP_Labo
                     help_text.Text = "";
                     break;
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            step = Convert.ToDouble(step_scroll.Value) / 10;
+            step2 = Convert.ToString(step);
+            string helper2 = String.Empty;
+            for (int i = 0; i < step2.Length; i++)
+            {
+                if (step2[i] == ',')
+                {
+                    helper2 += '.';
+                }
+                else helper2 += step2[i];
+            }
+            step2 = helper2;
+            for (int i = 0; i < myPort.Length; i++)
+            {
+                porty_combo.Items.Add(myPort[i]);
+            }
+            porty_combo.Text = myPort[0];
+        }
+
+        private void porty_combo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            data_port.Invoke(new Action(delegate () { data_port.Text = porty_combo.Text; }));
+        }
+
+        private void parity_combo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            data_parity.Invoke(new Action(delegate () { data_parity.Text = parity_combo.Text; }));
+        }
+
+        private void stopbits_combo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            data_stopbits.Invoke(new Action(delegate () { data_stopbits.Text = stopbits_combo.Text; }));
+        }
+
+        private void confirm2_Click(object sender, EventArgs e)
+        {
+            step = Convert.ToDouble(step_scroll.Value) / 10;
+            step2 = Convert.ToString(step);
+            string helper2 = String.Empty;
+            for (int i = 0; i < step2.Length; i++)
+            {
+                if (step2[i] == ',')
+                {
+                    helper2 += '.';
+                }
+                else helper2 += step2[i];
+            }
+            step2 = helper2;
+        }
+
+        private void confirm3_Click(object sender, EventArgs e)
+        {
+            step = Convert.ToDouble(step_scroll.Value) / 10;
+            step2 = Convert.ToString(step);
+            string helper2 = String.Empty;
+            for (int i = 0; i < step2.Length; i++)
+            {
+                if (step2[i] == ',')
+                {
+                    helper2 += '.';
+                }
+                else helper2 += step2[i];
+            }
+            step2 = helper2;
+        }
+
+        private void step_scroll2_Scroll(object sender, EventArgs e)
+        {
+            step_text.Text = Convert.ToString((float)step_scroll.Value / 10);
+            step_text2.Text = Convert.ToString((float)step_scroll.Value / 10);
+            step_text3.Text = Convert.ToString((float)step_scroll.Value / 10);
+            step_scroll.Value = step_scroll2.Value;
+            step_scroll3.Value = step_scroll2.Value;
+        }
+
+        private void step_scroll3_Scroll(object sender, EventArgs e)
+        {
+            step_text.Text = Convert.ToString((float)step_scroll.Value / 10);
+            step_text2.Text = Convert.ToString((float)step_scroll.Value / 10);
+            step_text3.Text = Convert.ToString((float)step_scroll.Value / 10);
+            step_scroll2.Value = step_scroll3.Value;
+            step_scroll.Value = step_scroll3.Value;
         }
 
         

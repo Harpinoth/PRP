@@ -1,4 +1,4 @@
-COM3
+COM2
 9600
 even
 8
