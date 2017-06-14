@@ -22,6 +22,7 @@ namespace PRP_Labo
 
         }
 
+        /* Public variables */
         public static string[] myPort = System.IO.Ports.SerialPort.GetPortNames();
         string crlf = Convert.ToString(Convert.ToChar(13)) + Convert.ToString(Convert.ToChar(10));
         int linenumber = 10;
@@ -40,7 +41,6 @@ namespace PRP_Labo
 
             string filepath;
             filepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + filename_port; // Universal pathname config
-            //MessageBox.Show(filepath);    // Testing/debugging purposes
 
             if (File.Exists(@filepath))
             {
@@ -74,7 +74,7 @@ namespace PRP_Labo
             // Saving data
             string filepath;
             filepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + filename_port; // Universal pathname config
-            /*  */
+            
             if (File.Exists(@filepath))
             {
                 string[] t = new string[5];
@@ -250,7 +250,7 @@ namespace PRP_Labo
 
         }
 
-        private void load_macro_Click(object sender, EventArgs e)                   // Macro responsible for loading macro from to file
+        private void load_macro_Click(object sender, EventArgs e)                   // Method responsible for loading program from to file
         {
             string filepath;
             filepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + filename_macro;
@@ -271,14 +271,14 @@ namespace PRP_Labo
             else MessageBox.Show("Plik nie istnieje!");
         }
 
-        private void edit_macro_Click(object sender, EventArgs e)
+        private void edit_macro_Click(object sender, EventArgs e)                   // Method responsible for allowing user to edit program in .txt file
         {
             string filepath;
             filepath = Path.GetDirectoryName(Application.ExecutablePath) + "\\" + filename_macro;
             Process.Start("notepad.exe", filepath);
         }
 
-        private void send_command_Click(object sender, EventArgs e)                 // Method responsible for sending macro
+        private void send_command_Click(object sender, EventArgs e)                 // Method responsible for sending program
         {
             SerialPort port_lab = port_call();
             port_starting(port_lab);
@@ -291,7 +291,7 @@ namespace PRP_Labo
             port_lab.Write(String.Format("ED" + "\r"));
             port_lab.Close();        }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)       // Reaction at closing app, purpose: safety
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             
         }
@@ -538,9 +538,9 @@ namespace PRP_Labo
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)                 // Reaction to starting program
         {
-            step = Convert.ToDouble(step_scroll.Value) / 10;
+            step = Convert.ToDouble(step_scroll.Value) / 10;                // Setting initial step value
             step2 = Convert.ToString(step);
             string helper2 = String.Empty;
             for (int i = 0; i < step2.Length; i++)
@@ -558,23 +558,23 @@ namespace PRP_Labo
             }
             porty_combo.Text = myPort[0];
         }
-
-        private void porty_combo_SelectedIndexChanged(object sender, EventArgs e)
+        
+        private void porty_combo_SelectedIndexChanged(object sender, EventArgs e)           // Reaction to choosing one of available ports
         {
             data_port.Invoke(new Action(delegate () { data_port.Text = porty_combo.Text; }));
         }
-
-        private void parity_combo_SelectedIndexChanged(object sender, EventArgs e)
+        
+        private void parity_combo_SelectedIndexChanged(object sender, EventArgs e)          // Reaction to choosing parity
         {
             data_parity.Invoke(new Action(delegate () { data_parity.Text = parity_combo.Text; }));
         }
 
-        private void stopbits_combo_SelectedIndexChanged(object sender, EventArgs e)
+        private void stopbits_combo_SelectedIndexChanged(object sender, EventArgs e)        // Reaction to choosing stopbits
         {
             data_stopbits.Invoke(new Action(delegate () { data_stopbits.Text = stopbits_combo.Text; }));
         }
 
-        private void confirm2_Click(object sender, EventArgs e)
+        private void confirm2_Click(object sender, EventArgs e)                             // Reaction to setting step value
         {
             step = Convert.ToDouble(step_scroll.Value) / 10;
             step2 = Convert.ToString(step);
@@ -590,7 +590,7 @@ namespace PRP_Labo
             step2 = helper2;
         }
 
-        private void confirm3_Click(object sender, EventArgs e)
+        private void confirm3_Click(object sender, EventArgs e)                             // Reaction to setting step value
         {
             step = Convert.ToDouble(step_scroll.Value) / 10;
             step2 = Convert.ToString(step);
@@ -606,7 +606,7 @@ namespace PRP_Labo
             step2 = helper2;
         }
 
-        private void step_scroll2_Scroll(object sender, EventArgs e)
+        private void step_scroll2_Scroll(object sender, EventArgs e)                        // Reaction to changing value on step slider
         {
             step_text.Text = Convert.ToString((float)step_scroll.Value / 10);
             step_text2.Text = Convert.ToString((float)step_scroll.Value / 10);
@@ -615,7 +615,7 @@ namespace PRP_Labo
             step_scroll3.Value = step_scroll2.Value;
         }
 
-        private void step_scroll3_Scroll(object sender, EventArgs e)
+        private void step_scroll3_Scroll(object sender, EventArgs e)                        // Reaction to changing value on step slider
         {
             step_text.Text = Convert.ToString((float)step_scroll.Value / 10);
             step_text2.Text = Convert.ToString((float)step_scroll.Value / 10);
