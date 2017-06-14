@@ -67,7 +67,7 @@ namespace PRP_Labo
                     catch { MessageBox.Show("Dane o ilości bitów stopu nie istnieją lub są uszkodzone!"); }
                 }));           // Stopbits loading
             }
-            else MessageBox.Show("File does not exist!");
+            else MessageBox.Show("Plik nie istnieje!");
         }
         public void save_parameters()   // Method for saving current connection data to file
         {
