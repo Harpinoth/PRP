@@ -1330,7 +1330,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(41, 55);
+            this.label34.Location = new System.Drawing.Point(16, 55);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(115, 13);
             this.label34.TabIndex = 3;
@@ -1340,9 +1340,9 @@
             // 
             this.help_panel.AutoScroll = true;
             this.help_panel.Controls.Add(this.help_text);
-            this.help_panel.Location = new System.Drawing.Point(235, 35);
+            this.help_panel.Location = new System.Drawing.Point(137, 35);
             this.help_panel.Name = "help_panel";
-            this.help_panel.Size = new System.Drawing.Size(280, 222);
+            this.help_panel.Size = new System.Drawing.Size(406, 222);
             this.help_panel.TabIndex = 2;
             // 
             // help_text
@@ -1388,7 +1388,7 @@
             "MRA",
             "GC",
             "GO"});
-            this.help_combo.Location = new System.Drawing.Point(44, 71);
+            this.help_combo.Location = new System.Drawing.Point(10, 71);
             this.help_combo.Name = "help_combo";
             this.help_combo.Size = new System.Drawing.Size(121, 21);
             this.help_combo.TabIndex = 0;
