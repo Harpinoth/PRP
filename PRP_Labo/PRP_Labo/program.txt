@@ -1,21 +1,10 @@
-DS 0,0,10
-DS 0,0,-10
-DS 0,0,10
-DS 0,0,-10
-DS 0,0,10
-DS 0,0,-10
-DS 0,0,10
-DS 0,0,-10
-
-
-
-
-
-
-
-
-
-
+who
+the
+hell
+is
+changing
+the
+program
 
 
 

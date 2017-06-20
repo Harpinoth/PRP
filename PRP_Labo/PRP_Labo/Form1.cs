@@ -284,11 +284,12 @@ namespace PRP_Labo
             port_starting(port_lab);
             for (int i = 0; i < makro_list.Length; i++)
             {
-                Thread.Sleep(750);
+                Thread.Sleep(2750);
                 if (string.IsNullOrEmpty(makro_list[i])) break;
-                port_lab.Write(String.Format(makro_list[i]+crlf));                
+                if(i < makro_list.Length - 1)   port_lab.Write(String.Format(makro_list[i]+crlf));  
+                else port_lab.Write(String.Format(makro_list[i] + "\r"));
             }
-            port_lab.Write(String.Format("ED" + "\r"));
+            //port_lab.Write(String.Format("ED" + "\r"));
             port_lab.Close();        }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
